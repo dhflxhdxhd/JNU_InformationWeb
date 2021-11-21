@@ -1,15 +1,5 @@
-
 import React from 'react';
 import { useEffect } from 'react';
-
-// const mapContainer = () => {
-//     return (
-//         <div class="mapContainer" style={{
-//             width : '500px',
-//             height : '500px'
-//         }}></div>
-//     );
-// }
 
 const { kakao } = window;
 const MapContainer = () => {
@@ -24,10 +14,7 @@ const MapContainer = () => {
     }, []);
 
     return (
-        <div id='myMap' style={{
-            width: '500px', 
-            height: '500px'
-        }}></div>
+        <div id='myMap'></div>
     );
 }
 export default MapContainer
