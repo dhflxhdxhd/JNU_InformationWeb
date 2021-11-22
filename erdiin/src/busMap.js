@@ -2,6 +2,8 @@ import React from 'react';
 import { useEffect } from 'react';
 
 const { kakao } = window;
+
+// 좌표 수정  필요
 const positionA = [
     {
         title:'정문',
