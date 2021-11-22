@@ -146,6 +146,14 @@ const MapContainer = () => {
     );
 }
 
+
+// maker -> busimg.
+const imgSrc = "../img/bus-stop.png"
+
+const createMarkerImg = (src,size,options) => {
+    const busImg = new kakao.maps.MarkerImage(src,size,options);
+    return busImg
+}
 const busMap = () =>{
     const container = document.getElementById('myMap');
     const options = {
@@ -160,6 +168,7 @@ const busMap = () =>{
             map:map,
             position: new kakao.maps.LatLng(element.lat,element.lng),
             title:element.title,
+            img:img 
         }
     );
     });

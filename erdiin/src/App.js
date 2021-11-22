@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
-import MapContainer from './map';
+import MapContainer from './busMap';
 
 function App() {  
   return (
