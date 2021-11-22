@@ -1,0 +1,6 @@
+/*className으로는 css가 먹히질 않음. 왜지*/
+
+#myMap {
+  width: 100%; 
+  height: 100vh
+}
