@@ -143,6 +143,17 @@ const MapContainer = () => {
 		};
         const map = new kakao.maps.Map(container, options);
 
+        positionA.forEach(element => {
+            new kakao.maps.Marker(
+                {
+                    map:map,
+                    position: new kakao.maps.LatLng(element.lat,element.lng),
+                    title:element.title,
+                }
+            );
+        });
+
+
  
     }, []);
 
