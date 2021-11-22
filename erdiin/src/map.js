@@ -136,37 +136,40 @@ const positionB = [
 const MapContainer = () => {
     
     useEffect(() => {
-        const container = document.getElementById('myMap');
-		const options = {
-			center: new kakao.maps.LatLng(33.45606028280052, 126.56205448172588),
-			level: 3
-		};
-        const map = new kakao.maps.Map(container, options);
-
-        positionA.forEach(element => {
-            new kakao.maps.Marker(
-                {
-                    map:map,
-                    position: new kakao.maps.LatLng(element.lat,element.lng),
-                    title:element.title,
-                }
-            );
-        });
-
-        positionB.forEach(element => {
-            new kakao.maps.Marker(
-                {
-                    map:map,
-                    position: new kakao.maps.LatLng(element.lat,element.lng),
-                    title:element.title,
-                }
-            );
-        });
- 
+        busMap();
     }, []);
 
     return (
         <div id='myMap'></div>
     );
+}
+
+const busMap = () =>{
+    const container = document.getElementById('myMap');
+    const options = {
+    center: new kakao.maps.LatLng(33.45606028280052, 126.56205448172588),
+    level: 3
+    };
+    const map = new kakao.maps.Map(container, options);
+
+    positionA.forEach(element => {
+    new kakao.maps.Marker(
+        {
+            map:map,
+            position: new kakao.maps.LatLng(element.lat,element.lng),
+            title:element.title,
+        }
+    );
+    });
+
+    positionB.forEach(element => {
+    new kakao.maps.Marker(
+        {
+            map:map,
+            position: new kakao.maps.LatLng(element.lat,element.lng),
+            title:element.title,
+        }
+    );
+    });
 }
 export default MapContainer
