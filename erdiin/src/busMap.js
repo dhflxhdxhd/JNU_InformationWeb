@@ -1,6 +1,7 @@
 import React from 'react';
 import './busMap.css'
 import { useEffect } from 'react';
+import {createOfficeMarkers, createStoreMarkers, createRstrtMarkers, createAtmMarkers, createPrintMarkers, createEtcMarkers, changeMarker} from "./FacilityLocationInfo";
 
 const { kakao } = window;
 
@@ -140,6 +141,13 @@ const MapContainer = () => {
     
     useEffect(() => {
         busMap();
+
+        createOfficeMarkers();
+        createStoreMarkers();
+        createRstrtMarkers();
+        createAtmMarkers();
+        createPrintMarkers();
+        createEtcMarkers();
     }, []);
 
     return (
