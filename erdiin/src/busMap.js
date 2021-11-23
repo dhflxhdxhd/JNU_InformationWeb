@@ -25,7 +25,7 @@ const busMap = () =>{
     };
     const map = new kakao.maps.Map(container, options);
 
-    const busImgSrc = '../img/bus.png', 
+    const busImgSrc = 'http://tmapapi.sktelecom.com/upload/tmap/marker/pin_r_b_x.png', 
       busImgSize = new kakao.maps.Size(64, 69),
       busImgOption = {offset: new kakao.maps.Point(27, 69)}; 
 
