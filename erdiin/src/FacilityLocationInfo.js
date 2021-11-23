@@ -137,11 +137,11 @@ const createMarker = (position, image) => {
 
 //과사무실 마커 생성 후 마커배열에 추가하는 함수
 export const createOfficeMarkers = () => {
-    //사무실 마커 이미지 주소
-    const officeMarker = "https://lh3.googleusercontent.com/XXywIaIqwHGiek71n0nrgBctzNhgZ04w6Hgut2S0mH3P7eXiBQj9uTgSt2ttXrkgdRSImO37WvRGPeO54p9q18Gj0VdopLc0nEFMAXwsIAU_Penvf49DD4ICFT7lGOpez3kN2UW_cCpawuojZ-yhPRKhiqOvPfe6zqiO6Pdw3x4LdRgMiogiA8tOhDHDOnwXQapRExqCzawsu2pi-cAwwynHT554s5z5yKog90FpNCCkmUBRgXSCf8m6yxcWGkSkeM-AYma-C1w9FhI_ZMkYruiwbjjrUYITwsRBmGikLxhPqaojZEEyFd-8jllm2I3NuDDweVfi3sCQ0jllMDf1jW9Xmn8HhXjoRGi4kmVfEiRDc7ZiI3YDdaR4-CApi0CRMeNediYHcDg_rPbQxVILnRWh0iu_76_i5pY0iYsxWXayxQwRS20sq0VgzCndQxEAbdqS43qAYKF8km7JqBTBm_SSYsZs2R0BlwXtXZHHODyg3Rz_zeitikW3eHlWouhZAvqizwTnpTUrJ1X4k2hdad7A-C65tsYxiQ_P0iViCXcHYvz7ml2vRkOaoKAh6_sFhJtDIeM2pHKpU5aw4VSu-O192LWRxhvW1qM5t5-QWchO917vLpx6Si-dI_shBGSpHAjiuywG0WUb3NkAcr9g-UHsSPYDV6Tr-o0BSR33tYLSHal_x7SAyc9A3LqocTLuljkwcIAsEDDh3Lh21Ac=w727-h969-no?authuser=0";
+    //사무실 마커 이미지 주소(blue)
+    const officeMarker = "https://github.com/JNU-erdiin/JNU_InformationWeb/blob/main/img/bluepin.png?raw=true";
     for (var i = 0; i < positionOffice.length; i++) {
 
-        let imageSize = new kakao.maps.Size(22, 26);
+        let imageSize = new kakao.maps.Size(50, 50);
 
         // 마커이미지와 마커를 생성합니다
         var markerImage = new kakao.maps.MarkerImage(officeMarker, imageSize),
@@ -161,11 +161,11 @@ const setOfficeMarkers = (map) => {
 
 //기타시설 마커 생성 후 마커배열에 추가하는 함수
 export const createEtcMarkers = () => {
-    //사무실 마커 이미지 주소
-    const etcMarker = "https://lh3.googleusercontent.com/XXywIaIqwHGiek71n0nrgBctzNhgZ04w6Hgut2S0mH3P7eXiBQj9uTgSt2ttXrkgdRSImO37WvRGPeO54p9q18Gj0VdopLc0nEFMAXwsIAU_Penvf49DD4ICFT7lGOpez3kN2UW_cCpawuojZ-yhPRKhiqOvPfe6zqiO6Pdw3x4LdRgMiogiA8tOhDHDOnwXQapRExqCzawsu2pi-cAwwynHT554s5z5yKog90FpNCCkmUBRgXSCf8m6yxcWGkSkeM-AYma-C1w9FhI_ZMkYruiwbjjrUYITwsRBmGikLxhPqaojZEEyFd-8jllm2I3NuDDweVfi3sCQ0jllMDf1jW9Xmn8HhXjoRGi4kmVfEiRDc7ZiI3YDdaR4-CApi0CRMeNediYHcDg_rPbQxVILnRWh0iu_76_i5pY0iYsxWXayxQwRS20sq0VgzCndQxEAbdqS43qAYKF8km7JqBTBm_SSYsZs2R0BlwXtXZHHODyg3Rz_zeitikW3eHlWouhZAvqizwTnpTUrJ1X4k2hdad7A-C65tsYxiQ_P0iViCXcHYvz7ml2vRkOaoKAh6_sFhJtDIeM2pHKpU5aw4VSu-O192LWRxhvW1qM5t5-QWchO917vLpx6Si-dI_shBGSpHAjiuywG0WUb3NkAcr9g-UHsSPYDV6Tr-o0BSR33tYLSHal_x7SAyc9A3LqocTLuljkwcIAsEDDh3Lh21Ac=w727-h969-no?authuser=0";
+    //기타시설 마커 이미지 주소(grey)
+    const etcMarker = "https://github.com/JNU-erdiin/JNU_InformationWeb/blob/main/img/greypin.png?raw=true";
     for (var i = 0; i < positionEtc.length; i++) {
 
-        let imageSize = new kakao.maps.Size(22, 26);
+        let imageSize = new kakao.maps.Size(50, 50);
 
         // 마커이미지와 마커를 생성합니다
         var markerImage = new kakao.maps.MarkerImage(etcMarker, imageSize),
@@ -186,11 +186,11 @@ const setEtcMarkers = (map) => {
 
 //식당 마커 생성 후 마커배열에 추가하는 함수
 export const createRstrtMarkers = () => {
-    //사무실 마커 이미지 주소
-    const rstrtMarker = "https://lh3.googleusercontent.com/XXywIaIqwHGiek71n0nrgBctzNhgZ04w6Hgut2S0mH3P7eXiBQj9uTgSt2ttXrkgdRSImO37WvRGPeO54p9q18Gj0VdopLc0nEFMAXwsIAU_Penvf49DD4ICFT7lGOpez3kN2UW_cCpawuojZ-yhPRKhiqOvPfe6zqiO6Pdw3x4LdRgMiogiA8tOhDHDOnwXQapRExqCzawsu2pi-cAwwynHT554s5z5yKog90FpNCCkmUBRgXSCf8m6yxcWGkSkeM-AYma-C1w9FhI_ZMkYruiwbjjrUYITwsRBmGikLxhPqaojZEEyFd-8jllm2I3NuDDweVfi3sCQ0jllMDf1jW9Xmn8HhXjoRGi4kmVfEiRDc7ZiI3YDdaR4-CApi0CRMeNediYHcDg_rPbQxVILnRWh0iu_76_i5pY0iYsxWXayxQwRS20sq0VgzCndQxEAbdqS43qAYKF8km7JqBTBm_SSYsZs2R0BlwXtXZHHODyg3Rz_zeitikW3eHlWouhZAvqizwTnpTUrJ1X4k2hdad7A-C65tsYxiQ_P0iViCXcHYvz7ml2vRkOaoKAh6_sFhJtDIeM2pHKpU5aw4VSu-O192LWRxhvW1qM5t5-QWchO917vLpx6Si-dI_shBGSpHAjiuywG0WUb3NkAcr9g-UHsSPYDV6Tr-o0BSR33tYLSHal_x7SAyc9A3LqocTLuljkwcIAsEDDh3Lh21Ac=w727-h969-no?authuser=0";
+    //식당 마커 이미지 주소(orange)
+    const rstrtMarker = "https://github.com/JNU-erdiin/JNU_InformationWeb/blob/main/img/orangepin.png?raw=true";
     for (var i = 0; i < positionRstrt.length; i++) {
 
-        let imageSize = new kakao.maps.Size(22, 26);
+        let imageSize = new kakao.maps.Size(50, 50);
 
         // 마커이미지와 마커를 생성합니다
         var markerImage = new kakao.maps.MarkerImage(rstrtMarker, imageSize),
@@ -211,11 +211,11 @@ const setRstrtMarkers = (map) => {
 //매점 마커 생성 후 마커배열에 추가하는 함수
 export const createStoreMarkers = () => {
 
-    //사무실 마커 이미지 주소
-    const storeMarker = "https://lh3.googleusercontent.com/XXywIaIqwHGiek71n0nrgBctzNhgZ04w6Hgut2S0mH3P7eXiBQj9uTgSt2ttXrkgdRSImO37WvRGPeO54p9q18Gj0VdopLc0nEFMAXwsIAU_Penvf49DD4ICFT7lGOpez3kN2UW_cCpawuojZ-yhPRKhiqOvPfe6zqiO6Pdw3x4LdRgMiogiA8tOhDHDOnwXQapRExqCzawsu2pi-cAwwynHT554s5z5yKog90FpNCCkmUBRgXSCf8m6yxcWGkSkeM-AYma-C1w9FhI_ZMkYruiwbjjrUYITwsRBmGikLxhPqaojZEEyFd-8jllm2I3NuDDweVfi3sCQ0jllMDf1jW9Xmn8HhXjoRGi4kmVfEiRDc7ZiI3YDdaR4-CApi0CRMeNediYHcDg_rPbQxVILnRWh0iu_76_i5pY0iYsxWXayxQwRS20sq0VgzCndQxEAbdqS43qAYKF8km7JqBTBm_SSYsZs2R0BlwXtXZHHODyg3Rz_zeitikW3eHlWouhZAvqizwTnpTUrJ1X4k2hdad7A-C65tsYxiQ_P0iViCXcHYvz7ml2vRkOaoKAh6_sFhJtDIeM2pHKpU5aw4VSu-O192LWRxhvW1qM5t5-QWchO917vLpx6Si-dI_shBGSpHAjiuywG0WUb3NkAcr9g-UHsSPYDV6Tr-o0BSR33tYLSHal_x7SAyc9A3LqocTLuljkwcIAsEDDh3Lh21Ac=w727-h969-no?authuser=0";
+    //매점 마커 이미지 주소(red)
+    const storeMarker = "https://github.com/JNU-erdiin/JNU_InformationWeb/blob/main/img/redpin.png?raw=true";
     for (var i = 0; i < positionCvtStore.length; i++) {
 
-        let imageSize = new kakao.maps.Size(22, 26);
+        let imageSize = new kakao.maps.Size(50, 50);
 
         // 마커이미지와 마커를 생성합니다
         var markerImage = new kakao.maps.MarkerImage(storeMarker, imageSize),
@@ -239,11 +239,11 @@ const setStoreMarkers = (map) => {
 
 //프린터기 마커 생성 후 마커배열에 추가하는 함수
 export const createPrintMarkers = () => {
-    //사무실 마커 이미지 주소
-    const printMarker = "https://lh3.googleusercontent.com/XXywIaIqwHGiek71n0nrgBctzNhgZ04w6Hgut2S0mH3P7eXiBQj9uTgSt2ttXrkgdRSImO37WvRGPeO54p9q18Gj0VdopLc0nEFMAXwsIAU_Penvf49DD4ICFT7lGOpez3kN2UW_cCpawuojZ-yhPRKhiqOvPfe6zqiO6Pdw3x4LdRgMiogiA8tOhDHDOnwXQapRExqCzawsu2pi-cAwwynHT554s5z5yKog90FpNCCkmUBRgXSCf8m6yxcWGkSkeM-AYma-C1w9FhI_ZMkYruiwbjjrUYITwsRBmGikLxhPqaojZEEyFd-8jllm2I3NuDDweVfi3sCQ0jllMDf1jW9Xmn8HhXjoRGi4kmVfEiRDc7ZiI3YDdaR4-CApi0CRMeNediYHcDg_rPbQxVILnRWh0iu_76_i5pY0iYsxWXayxQwRS20sq0VgzCndQxEAbdqS43qAYKF8km7JqBTBm_SSYsZs2R0BlwXtXZHHODyg3Rz_zeitikW3eHlWouhZAvqizwTnpTUrJ1X4k2hdad7A-C65tsYxiQ_P0iViCXcHYvz7ml2vRkOaoKAh6_sFhJtDIeM2pHKpU5aw4VSu-O192LWRxhvW1qM5t5-QWchO917vLpx6Si-dI_shBGSpHAjiuywG0WUb3NkAcr9g-UHsSPYDV6Tr-o0BSR33tYLSHal_x7SAyc9A3LqocTLuljkwcIAsEDDh3Lh21Ac=w727-h969-no?authuser=0";
+    //프린터기 마커 이미지 주소(green)
+    const printMarker = "https://github.com/JNU-erdiin/JNU_InformationWeb/blob/main/img/greenpin.png?raw=true";
     for (var i = 0; i < positionPrint.length; i++) {
 
-        let imageSize = new kakao.maps.Size(22, 26);
+        let imageSize = new kakao.maps.Size(50, 50);
 
         // 마커이미지와 마커를 생성합니다
         var markerImage = new kakao.maps.MarkerImage(printMarker, imageSize),
@@ -263,11 +263,11 @@ const setPrintMarkers = (map) => {
 
 //atm 마커 생성 후 마커배열에 추가하는 함수
 export const createAtmMarkers = () => {
-    //사무실 마커 이미지 주소
-    const atmMarker = "https://lh3.googleusercontent.com/XXywIaIqwHGiek71n0nrgBctzNhgZ04w6Hgut2S0mH3P7eXiBQj9uTgSt2ttXrkgdRSImO37WvRGPeO54p9q18Gj0VdopLc0nEFMAXwsIAU_Penvf49DD4ICFT7lGOpez3kN2UW_cCpawuojZ-yhPRKhiqOvPfe6zqiO6Pdw3x4LdRgMiogiA8tOhDHDOnwXQapRExqCzawsu2pi-cAwwynHT554s5z5yKog90FpNCCkmUBRgXSCf8m6yxcWGkSkeM-AYma-C1w9FhI_ZMkYruiwbjjrUYITwsRBmGikLxhPqaojZEEyFd-8jllm2I3NuDDweVfi3sCQ0jllMDf1jW9Xmn8HhXjoRGi4kmVfEiRDc7ZiI3YDdaR4-CApi0CRMeNediYHcDg_rPbQxVILnRWh0iu_76_i5pY0iYsxWXayxQwRS20sq0VgzCndQxEAbdqS43qAYKF8km7JqBTBm_SSYsZs2R0BlwXtXZHHODyg3Rz_zeitikW3eHlWouhZAvqizwTnpTUrJ1X4k2hdad7A-C65tsYxiQ_P0iViCXcHYvz7ml2vRkOaoKAh6_sFhJtDIeM2pHKpU5aw4VSu-O192LWRxhvW1qM5t5-QWchO917vLpx6Si-dI_shBGSpHAjiuywG0WUb3NkAcr9g-UHsSPYDV6Tr-o0BSR33tYLSHal_x7SAyc9A3LqocTLuljkwcIAsEDDh3Lh21Ac=w727-h969-no?authuser=0";
+    //atm 마커 이미지 주소(purple)
+    const atmMarker = "https://github.com/JNU-erdiin/JNU_InformationWeb/blob/main/img/purplepin.png?raw=true";
     for (var i = 0; i < positionATM.length; i++) {
 
-        let imageSize = new kakao.maps.Size(22, 26);
+        let imageSize = new kakao.maps.Size(50, 50);
 
         // 마커이미지와 마커를 생성합니다
         var markerImage = new kakao.maps.MarkerImage(atmMarker, imageSize),
