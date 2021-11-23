@@ -1,0 +1,34 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#map {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.nav {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    z-index: 1;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.facility:hover > .category> ul > li {
+    display: block;
+}
+.category {
+    position: relative;
+}
+.category > ul {
+    position: absolute;
+}
+.facility_info {
+    list-style: none;
+    display: none;
+}
