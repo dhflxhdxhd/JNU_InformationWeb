@@ -254,7 +254,7 @@ export const createPrintMarkers = () => {
     }
 }
 
-//프린터기 마커들의 지도 표시 여부 설정 함수
+//프린터기 마커들의 지도 표시 여부 설정 함수    
 const setPrintMarkers = (map) => {
     for (let i=0; i<printMarkers.length; i++) {
         printMarkers[i].setMap(map);
