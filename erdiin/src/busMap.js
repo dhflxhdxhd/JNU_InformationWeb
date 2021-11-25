@@ -1,9 +1,8 @@
-import React from 'react';
 import './busMap.css'
 import { useEffect } from 'react';
+import {positionA, positionB} from './positions.js'
 
-import {positionA,positionB} from './positions.js'
-import {createOfficeMarkers, createStoreMarkers, createRstrtMarkers, createAtmMarkers, createPrintMarkers, createEtcMarkers, changeMarker} from "./FacilityLocationInfo";
+import * as facLoc from "./FacilityLocationInfo";
 
 const { kakao } = window;
 let map;
@@ -13,30 +12,29 @@ const MapContainer = () => {
     useEffect(() => {
         busMap();
 
-        createOfficeMarkers();
-        createStoreMarkers();
-        createRstrtMarkers();
-        createAtmMarkers();
-        createPrintMarkers();
-        createEtcMarkers();
+        facLoc.createOfficeMarkers();
+        facLoc.createStoreMarkers();
+        facLoc.createRstrtMarkers();
+        facLoc.createAtmMarkers();
+        facLoc.createPrintMarkers();
+        facLoc.createEtcMarkers();
     }, []);
 
     return (
         <div className="Map">
             <div id='myMap'></div>
-            //지도 위 버튼
             <div className="nav">
                 <div className="facility">시설정보
                     <div className="category">
                         <ul>
-                            <li className="facility_info"><button id="store" className="btn conv" onClick={() => changeMarker('store', map)}>편의점</button></li>
-                            <li id="atm" className="facility_info"><button className="btn atm" onClick={() => changeMarker('atm', map)}>ATM</button></li>
-                            <li id="office" className="facility_info"><button className="btn room" onClick={() => changeMarker('office', map)}>과사무실</button></li>
-                            <li id="rstrt" className="facility_info"><button className="btn cafe" onClick={() => changeMarker('rstrt', map)}>식당</button></li>
-                            <li id="print" className="facility_info"><button className="btn cafe" onClick={() => changeMarker('print', map)}>프린터기</button></li>
-                            <li id="etc" className="facility_info"><button className="btn cafe" onClick={() => changeMarker('etc', map)}>기타</button></li>
+                            <li className="facility_info"><button id="store" className="btn conv" onClick={() => facLoc.changeMarker('store', map)}>편의점</button></li>
+                            <li id="atm" className="facility_info"><button className="btn atm" onClick={() => facLoc.changeMarker('atm', map)}>ATM</button></li>
+                            <li id="office" className="facility_info"><button className="btn room" onClick={() => facLoc.changeMarker('office', map)}>과사무실</button></li>
+                            <li id="rstrt" className="facility_info"><button className="btn cafe" onClick={() => facLoc.changeMarker('rstrt', map)}>식당</button></li>
+                            <li id="print" className="facility_info"><button className="btn cafe" onClick={() => facLoc.changeMarker('print', map)}>프린터기</button></li>
+                            <li id="etc" className="facility_info"><button className="btn cafe" onClick={() => facLoc.changeMarker('etc', map)}>기타</button></li>
                         </ul>
-                    </div>
+                    </div>  
                 </div>
                 <div className="bus">순환버스</div>
             </div>
@@ -44,13 +42,6 @@ const MapContainer = () => {
     );
 }
 
-
-
-
-// const createMarkerImg = (src,size,options) => {
-//     const busImg = new kakao.maps.MarkerImage(src,size,options);
-//     return busImg
-// }
 
 
 const busMap = () =>{
@@ -62,52 +53,41 @@ const busMap = () =>{
     map = new kakao.maps.Map(container, options);
 
 
-//     const busImgSrc = 'http://tmapapi.sktelecom.com/upload/tmap/marker/pin_r_b_x.png', 
-//       busImgSize = new kakao.maps.Size(64, 69),
-//       busImgOption = {offset: new kakao.maps.Point(27, 69)}; 
+    // const imgSrc = 'https://github.com/JNU-erdiin/JNU_InformationWeb/blob/803c95a318738d58b58784236853f8717c8d8c0f/img/bus-stop.png?raw=true', 
+    //   busImgSize = new kakao.maps.Size(64, 69),
+    //   busImgOption = {offset: new kakao.maps.Point(27, 69)}; 
 
-//     const markerImage = new kakao.maps.MarkerImage(busImgSrc,busImgSize,busImgOption);
-//     const markerPos = new kakao.maps.LatLng(33.459757645661135,126.56156244046907);
+    // const markerImage = new kakao.maps.MarkerImage(busImgSrc,busImgSize,busImgOption);
+    // const markerPos = new kakao.maps.LatLng(33.459757645661135,126.56156244046907);
 
-//     const marker = new kakao.maps.Marker({
-//         position : markerPos,
-//         image : markerImage
-//     })
+    // const marker = new kakao.maps.Marker({
+    //     position : markerPos,
+    //     image : markerImage
+    // })
 
-//     marker.setMap(map)
-    // positionA.forEach(el=> {
-    // new kakao.maps.Marker(
-    //     {
-    //         map:map,
-    //         position: new kakao.maps.LatLng(el.lat,el.lng),
-    //         title:el.title,
-    //         img:markerImage
-    //     }
-    // );
-    // });
+    // marker.setMap(map)
 
-    // positionB.forEach(el => {
-    // new kakao.maps.Marker(
-    //     {
-    //         map:map,
-    //         position: new kakao.maps.LatLng(el.lat,el.lng),
-    //         title:el.title,
-    //         img:markerImage
-    //     }
-    // );
-    // });
-
-    positionA.forEach(element => {
+    positionA.forEach(el=> {
     new kakao.maps.Marker(
         {
             map:map,
-            position: new kakao.maps.LatLng(element.lat,element.lng),
-            title:element.title,
-            img:imgSrc //임의로 설정해놓음(안되면 에러떠서 진행이 불가ㅠㅠ)
+            position: new kakao.maps.LatLng(el.lat,el.lng),
+            title:el.title,
+            // img:markerImage
         }
     );
     });
 
+    positionB.forEach(el => {
+    new kakao.maps.Marker(
+        {
+            map:map,
+            position: new kakao.maps.LatLng(el.lat,el.lng),
+            title:el.title,
+            // img:markerImage
+        }
+    );
+    });
 
 }
 export default MapContainer
