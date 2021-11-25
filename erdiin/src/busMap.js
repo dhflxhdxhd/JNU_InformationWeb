@@ -63,14 +63,16 @@ const busMarker = () =>{
     };
     const map = new kakao.maps.Map(container, options);
 
-    var imageSrc = "https://github.com/dhflxhdxhd/JNU_InformationWeb/blob/main/img/bus-stop.png?raw=true"; 
+    const imageSrc_A = "https://github.com/dhflxhdxhd/JNU_InformationWeb/blob/main/img/bus-stop.png?raw=true"; 
+    const imageSrc_B = "https://github.com/dhflxhdxhd/JNU_InformationWeb/blob/main/img/bus-stop-red.png?raw=true"; 
 
      // 마커 이미지의 이미지 크기 입니다
-     const imageSize = new kakao.maps.Size(40,40); 
+    const imageSize = new kakao.maps.Size(40,40); 
     
      // 마커 이미지를 생성합니다    
-     const markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize); 
-    
+    const markerImage_A = new kakao.maps.MarkerImage(imageSrc_A, imageSize); 
+    const markerImage_B = new kakao.maps.MarkerImage(imageSrc_B, imageSize); 
+
     for (let i = 0; i < positionA.length; i ++) {
         let latlng = new kakao.maps.LatLng(positionA[i].lat,positionA[i].lng);
         let title = positionA[i].title
@@ -80,7 +82,7 @@ const busMarker = () =>{
             map: map, // 마커를 표시할 지도
             position: latlng, // 마커를 표시할 위치
             title : title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
-            image : markerImage // 마커 이미지 
+            image : markerImage_A // 마커 이미지 
         });
     }
 
@@ -93,33 +95,9 @@ const busMarker = () =>{
             map: map, // 마커를 표시할 지도
             position: latlng, // 마커를 표시할 위치
             title : title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
-            image : markerImage // 마커 이미지 
+            image : markerImage_B // 마커 이미지 
         });
     }
-
-
-
-
-
-    // positionA.forEach(element => {
-    // new kakao.maps.Marker(
-    //     {
-    //         map:map,
-    //         position: new kakao.maps.LatLng(element.lat,element.lng),
-    //         title:element.title,
-    //     }
-    // );
-    // });
-
-    // positionB.forEach(element => {
-    // new kakao.maps.Marker(
-    //     {
-    //         map:map,
-    //         position: new kakao.maps.LatLng(element.lat,element.lng),
-    //         title:element.title,
-    //     }
-    // );
-    // });
 }
 
 export default MapContainer
