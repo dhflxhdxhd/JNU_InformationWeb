@@ -1,7 +1,7 @@
 import './busMap.css'
 import { useEffect } from 'react';
 import {positionA, positionB} from './positions.js'
-
+import * as makeMarkers from './marker.js'
 import * as facLoc from "./FacilityLocationInfo";
 
 const { kakao } = window;
@@ -53,12 +53,12 @@ const busMap = () =>{
     map = new kakao.maps.Map(container, options);
 
 
-    // const imgSrc = 'https://github.com/JNU-erdiin/JNU_InformationWeb/blob/803c95a318738d58b58784236853f8717c8d8c0f/img/bus-stop.png?raw=true', 
-    //   busImgSize = new kakao.maps.Size(64, 69),
-    //   busImgOption = {offset: new kakao.maps.Point(27, 69)}; 
+    const busImgSrc = 'https://github.com/JNU-erdiin/JNU_InformationWeb/blob/803c95a318738d58b58784236853f8717c8d8c0f/img/bus-stop.png?raw=true', 
+          busImgSize = new kakao.maps.Size(50,50),
+          busImgOption = {offset: new kakao.maps.Point(27, 69)}; 
 
-    // const markerImage = new kakao.maps.MarkerImage(busImgSrc,busImgSize,busImgOption);
-    // const markerPos = new kakao.maps.LatLng(33.459757645661135,126.56156244046907);
+    const markerImage = new kakao.maps.MarkerImage(busImgSrc,busImgSize,busImgOption);
+    // const markerPos = new kakao.maps.LatLng(33.45295911653265,126.55767030400025 );
 
     // const marker = new kakao.maps.Marker({
     //     position : markerPos,
@@ -66,28 +66,36 @@ const busMap = () =>{
     // })
 
     // marker.setMap(map)
+    
+    console.log(positionA.length)
 
-    positionA.forEach(el=> {
-    new kakao.maps.Marker(
-        {
-            map:map,
-            position: new kakao.maps.LatLng(el.lat,el.lng),
-            title:el.title,
-            // img:markerImage
-        }
-    );
-    });
 
-    positionB.forEach(el => {
-    new kakao.maps.Marker(
-        {
-            map:map,
-            position: new kakao.maps.LatLng(el.lat,el.lng),
-            title:el.title,
-            // img:markerImage
-        }
-    );
-    });
+    makeMarkers.createMarkers();
+    makeMarkers.createMarkers(busImgSrc,positionA);
+    makeMarkers.setMarkers();
+
+
+    // positionA.forEach(el=> {
+    // new kakao.maps.Marker(
+    //     {
+    //         map:map,
+    //         position: new kakao.maps.LatLng(el.lat,el.lng),
+    //         title:el.title,
+    //         // img:markerImage
+    //     }
+    // );
+    // });
+
+    // positionB.forEach(el => {
+    // new kakao.maps.Marker(
+    //     {
+    //         map:map,
+    //         position: new kakao.maps.LatLng(el.lat,el.lng),
+    //         title:el.title,
+    //         // img:markerImage
+    //     }
+    // );
+    // });
 
 }
 export default MapContainer
