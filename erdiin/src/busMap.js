@@ -1,7 +1,7 @@
 import './busMap.css'
 import { useEffect } from 'react';
 import {positionA, positionB} from './positions.js'
-import * as makeMarkers from './marker.js'
+// import * as makeMarkers from './marker.js'
 import * as facLoc from "./FacilityLocationInfo";
 
 const { kakao } = window;
@@ -10,7 +10,8 @@ let map;
 const MapContainer = () => {
     
     useEffect(() => {
-        busMap();
+
+        busMarker();
 
         facLoc.createOfficeMarkers();
         facLoc.createStoreMarkers();
@@ -43,59 +44,62 @@ const MapContainer = () => {
 }
 
 
+// const createMap = () => {
+//     const container = document.getElementById('myMap');
+//     const options = {
+//     center: new kakao.maps.LatLng(33.45606028280052, 126.56205448172588),
+//     level: 3
+//     };
+//     const map = new kakao.maps.Map(container, options);
+    
+//     return map;
+// }
 
-const busMap = () =>{
+const busMarker = () =>{
     const container = document.getElementById('myMap');
     const options = {
     center: new kakao.maps.LatLng(33.45606028280052, 126.56205448172588),
     level: 3
     };
-    map = new kakao.maps.Map(container, options);
+    const map = new kakao.maps.Map(container, options);
 
+    const imageSrc_A = "https://github.com/dhflxhdxhd/JNU_InformationWeb/blob/main/img/bus-stop.png?raw=true"; 
+    const imageSrc_B = "https://github.com/dhflxhdxhd/JNU_InformationWeb/blob/main/img/bus-stop-red.png?raw=true"; 
 
-    const busImgSrc = 'https://github.com/JNU-erdiin/JNU_InformationWeb/blob/803c95a318738d58b58784236853f8717c8d8c0f/img/bus-stop.png?raw=true', 
-          busImgSize = new kakao.maps.Size(50,50),
-          busImgOption = {offset: new kakao.maps.Point(27, 69)}; 
-
-    const markerImage = new kakao.maps.MarkerImage(busImgSrc,busImgSize,busImgOption);
-    // const markerPos = new kakao.maps.LatLng(33.45295911653265,126.55767030400025 );
-
-    // const marker = new kakao.maps.Marker({
-    //     position : markerPos,
-    //     image : markerImage
-    // })
-
-    // marker.setMap(map)
+     // 마커 이미지의 이미지 크기 입니다
+    const imageSize = new kakao.maps.Size(40,40); 
     
-    console.log(positionA.length)
+     // 마커 이미지를 생성합니다    
+    const markerImage_A = new kakao.maps.MarkerImage(imageSrc_A, imageSize); 
+    const markerImage_B = new kakao.maps.MarkerImage(imageSrc_B, imageSize); 
 
+    for (let i = 0; i < positionA.length; i ++) {
+        let latlng = new kakao.maps.LatLng(positionA[i].lat,positionA[i].lng);
+        let title = positionA[i].title
 
-    makeMarkers.createMarkers();
-    makeMarkers.createMarkers(busImgSrc,positionA);
-    makeMarkers.setMarkers();
+        // 마커를 생성합니다
+        let marker = new kakao.maps.Marker({
+            map: map, // 마커를 표시할 지도
+            position: latlng, // 마커를 표시할 위치
+            title : title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+            image : markerImage_A // 마커 이미지 
+        });
+    }
 
+    for (let i = 0; i < positionB.length; i ++) {
+        let latlng = new kakao.maps.LatLng(positionB[i].lat,positionB[i].lng);
+        let title = positionA[i].title
 
-    // positionA.forEach(el=> {
-    // new kakao.maps.Marker(
-    //     {
-    //         map:map,
-    //         position: new kakao.maps.LatLng(el.lat,el.lng),
-    //         title:el.title,
-    //         // img:markerImage
-    //     }
-    // );
-    // });
-
-    // positionB.forEach(el => {
-    // new kakao.maps.Marker(
-    //     {
-    //         map:map,
-    //         position: new kakao.maps.LatLng(el.lat,el.lng),
-    //         title:el.title,
-    //         // img:markerImage
-    //     }
-    // );
-    // });
-
+        // 마커를 생성합니다
+        let marker = new kakao.maps.Marker({
+            map: map, // 마커를 표시할 지도
+            position: latlng, // 마커를 표시할 위치
+            title : title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+            image : markerImage_B // 마커 이미지 
+        });
+    }
 }
+
 export default MapContainer
+
+
