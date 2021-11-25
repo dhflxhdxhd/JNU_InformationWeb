@@ -64,7 +64,7 @@ const busMarker = () =>{
     const map = new kakao.maps.Map(container, options);
 
     const imageSrc_A = "https://github.com/dhflxhdxhd/JNU_InformationWeb/blob/main/img/bus-stop.png?raw=true"; 
-    const imageSrc_B = "https://github.com/dhflxhdxhd/JNU_InformationWeb/blob/main/img/bus-stop-red.png?raw=true"; 
+    const imageSrc_B = "https://github.com/JNU-erdiin/JNU_InformationWeb/blob/main/img/bus-stop-red.png?raw=true"; 
 
      // 마커 이미지의 이미지 크기 입니다
     const imageSize = new kakao.maps.Size(40,40); 
