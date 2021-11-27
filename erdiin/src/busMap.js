@@ -2,7 +2,7 @@ import './busMap.css'
 import { useEffect } from 'react';
 import {positionA, positionB} from './positions.js'
 // import * as makeMarkers from './marker.js'
-import * as facLoc from "./FacilityLocationInfo";
+import * as facLoc from './FacilityLocationInfo';
 
 const { kakao } = window;
 let map;
@@ -19,11 +19,12 @@ const MapContainer = () => {
         facLoc.createAtmMarkers();
         facLoc.createPrintMarkers();
         facLoc.createEtcMarkers();
+
     }, []);
 
     return (
         <div className="Map">
-            <div id='myMap'></div>
+            <div id='myMap'> </div>
             <div className="nav">
                 <div className="facility">시설정보
                     <div className="category">
@@ -61,7 +62,8 @@ const busMarker = () =>{
     center: new kakao.maps.LatLng(33.45606028280052, 126.56205448172588),
     level: 3
     };
-    const map = new kakao.maps.Map(container, options);
+
+    map = new kakao.maps.Map(container, options);
 
     const imageSrc_A = "https://github.com/dhflxhdxhd/JNU_InformationWeb/blob/main/img/bus-stop.png?raw=true"; 
     const imageSrc_B = "https://github.com/JNU-erdiin/JNU_InformationWeb/blob/main/img/bus-stop-red.png?raw=true"; 

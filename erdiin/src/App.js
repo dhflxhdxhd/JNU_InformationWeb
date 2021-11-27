@@ -2,6 +2,9 @@
 import './App.css';
 import MapContainer from './busMap';
 
+const {kakao} = window;
+let map;
+
 function App() {  
   return (
     <div className="wrapper">

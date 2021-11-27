@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="cbef8925-edc9-433e-aaa2-1858a19a83ce" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erdiin/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/erdiin/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erdiin/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/erdiin/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/erdiin/src/FacilityLocationInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/erdiin/src/FacilityLocationInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erdiin/src/busMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/erdiin/src/busMap.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +43,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../react-prac/capstone" />
     <property name="nodejs_package_manager_path" value="yarn" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -53,7 +56,8 @@
       <updated>1637572513177</updated>
       <workItem from="1637572514782" duration="6418000" />
       <workItem from="1637641290477" duration="2342000" />
-      <workItem from="1637930816424" duration="4848000" />
+      <workItem from="1637930816424" duration="4994000" />
+      <workItem from="1637975216442" duration="3468000" />
     </task>
     <servers />
   </component>

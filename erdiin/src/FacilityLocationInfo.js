@@ -363,7 +363,7 @@ export const createOfficeMarkers = () => {
 
         // 마커이미지와 마커를 생성합니다
         var markerImage = new kakao.maps.MarkerImage(officeMarker, imageSize),
-            marker = createMarker(positionOffice[i], markerImage);
+            marker = createMarker(positionOffice[i].location, markerImage);
 
         // 생성된 마커를 커피숍 마커 배열에 추가합니다
         officeMarkers.push(marker);
@@ -387,7 +387,7 @@ export const createEtcMarkers = () => {
 
         // 마커이미지와 마커를 생성합니다
         var markerImage = new kakao.maps.MarkerImage(etcMarker, imageSize),
-            marker = createMarker(positionEtc[i], markerImage);
+            marker = createMarker(positionEtc[i].location, markerImage);
 
         // 생성된 마커를 커피숍 마커 배열에 추가합니다
         etcMarkers.push(marker);
@@ -412,7 +412,7 @@ export const createRstrtMarkers = () => {
 
         // 마커이미지와 마커를 생성합니다
         var markerImage = new kakao.maps.MarkerImage(rstrtMarker, imageSize),
-            marker = createMarker(positionRstrt[i], markerImage);
+            marker = createMarker(positionRstrt[i].location, markerImage);
 
         // 생성된 마커를 커피숍 마커 배열에 추가합니다
         rstrtMarkers.push(marker);
@@ -437,13 +437,10 @@ export const createStoreMarkers = () => {
 
         // 마커이미지와 마커를 생성합니다
         var markerImage = new kakao.maps.MarkerImage(storeMarker, imageSize),
-            marker = createMarker(positionCvtStore[i], markerImage);
+            marker = createMarker(positionCvtStore[i].location, markerImage);
 
         // 생성된 마커를 커피숍 마커 배열에 추가합니다
         storeMarkers.push(marker);
-
-
-
     }
 }
 
@@ -465,7 +462,7 @@ export const createPrintMarkers = () => {
 
         // 마커이미지와 마커를 생성합니다
         var markerImage = new kakao.maps.MarkerImage(printMarker, imageSize),
-            marker = createMarker(positionPrint[i], markerImage);
+            marker = createMarker(positionPrint[i].location, markerImage);
 
         // 생성된 마커를 커피숍 마커 배열에 추가합니다
         printMarkers.push(marker);
@@ -489,7 +486,7 @@ export const createAtmMarkers = () => {
 
         // 마커이미지와 마커를 생성합니다
         var markerImage = new kakao.maps.MarkerImage(atmMarker, imageSize),
-            marker = createMarker(positionATM[i], markerImage);
+            marker = createMarker(positionATM[i].location, markerImage);
 
         // 생성된 마커를 커피숍 마커 배열에 추가합니다
         atmMarkers.push(marker);
@@ -519,6 +516,13 @@ export const changeMarker = (type, map) => {
         setRstrtMarkers(null);
         setAtmMarkers(null);
         setPrintMarkers(null);
+
+        //마커 클릭 이벤트
+        for (let i=0; i<officeMarkers.length; i++) {
+            kakao.maps.event.addListener(officeMarkers[i], 'click', function () {
+                alert('click!'+ positionOffice[i].title);
+            });
+        }
     }
     else if (type === 'etc') {
         setOfficeMarkers(null);
@@ -527,6 +531,13 @@ export const changeMarker = (type, map) => {
         setRstrtMarkers(null);
         setAtmMarkers(null);
         setPrintMarkers(null);
+
+        //마커 클릭 이벤트
+        for (let i=0; i<etcMarkers.length; i++) {
+            kakao.maps.event.addListener(etcMarkers[i], 'click', function () {
+                alert('click!'+ positionEtc[i].title);
+            });
+        }
     }
     else if (type === 'store') {
         setOfficeMarkers(null);
@@ -535,6 +546,13 @@ export const changeMarker = (type, map) => {
         setRstrtMarkers(null);
         setAtmMarkers(null);
         setPrintMarkers(null);
+
+        //마커 클릭 이벤트
+        for (let i=0; i<storeMarkers.length; i++) {
+            kakao.maps.event.addListener(storeMarkers[i], 'click', function () {
+                alert('click!'+ positionCvtStore[i].title);
+            });
+        }
     }
     else if (type === 'rstrt') {
         setOfficeMarkers(null);
@@ -543,6 +561,13 @@ export const changeMarker = (type, map) => {
         setRstrtMarkers(map);
         setAtmMarkers(null);
         setPrintMarkers(null);
+
+        //마커 클릭 이벤트
+        for (let i=0; i<rstrtMarkers.length; i++) {
+            kakao.maps.event.addListener(rstrtMarkers[i], 'click', function () {
+                alert('click!'+ positionRstrt[i].title);
+            });
+        }
     }
     else if (type === 'atm') {
         setOfficeMarkers(null);
@@ -551,6 +576,13 @@ export const changeMarker = (type, map) => {
         setRstrtMarkers(null);
         setAtmMarkers(map);
         setPrintMarkers(null);
+
+        //마커 클릭 이벤트
+        for (let i=0; i<atmMarkers.length; i++) {
+            kakao.maps.event.addListener(atmMarkers[i], 'click', function () {
+                alert('click!'+ positionATM[i].title);
+            });
+        }
     }
     else if (type === 'print') {
         setOfficeMarkers(null);
@@ -559,5 +591,12 @@ export const changeMarker = (type, map) => {
         setRstrtMarkers(null);
         setAtmMarkers(null);
         setPrintMarkers(map);
+
+        //마커 클릭 이벤트
+        for (let i=0; i<printMarkers.length; i++) {
+            kakao.maps.event.addListener(printMarkers[i], 'click', function () {
+                alert('click!'+ positionPrint[i].title);
+            });
+        }
     }
 }
