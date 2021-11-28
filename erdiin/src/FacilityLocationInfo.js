@@ -1,4 +1,12 @@
 import * as facPos from './facilityPosition';
+import {
+    positionATM,
+    positionCvtStore,
+    positionEtc,
+    positionOffice,
+    positionPrint,
+    positionRstrt
+} from "./facilityPosition";
 
 const {kakao} = window;
 
@@ -166,6 +174,11 @@ const setAtmMarkers = (map) => {
     }
 }
 
+function createHtmlContent(title) {
+    let str = "<div className='mapContent'>" + title + "</div>"
+    return str;
+}
+
 //카테고리 클릭 시 type에 따라 카테고리 스타일, 지도 표시 마커 변경
 export const changeMarker = (type, map) => {
     let office = document.getElementById('office');
@@ -186,7 +199,14 @@ export const changeMarker = (type, map) => {
         //마커 클릭 이벤트
         for (let i=0; i<officeMarkers.length; i++) {
             kakao.maps.event.addListener(officeMarkers[i], 'click', function () {
-                alert('click!'+ facPos.positionOffice[i].title);
+
+                let content = createHtmlContent(positionOffice[i].content)
+                var infoWindow = new kakao.maps.InfoWindow({
+                    map: map,
+                    position: positionOffice[i].location,
+                    content: content,
+                    removable: true
+                })
             });
         }
     }
@@ -201,7 +221,14 @@ export const changeMarker = (type, map) => {
         //마커 클릭 이벤트
         for (let i=0; i<etcMarkers.length; i++) {
             kakao.maps.event.addListener(etcMarkers[i], 'click', function () {
-                alert('click!'+ facPos.positionEtc[i].title);
+
+                let content = createHtmlContent(positionEtc[i].title)
+                var infoWindow = new kakao.maps.InfoWindow({
+                    map: map,
+                    position: positionEtc[i].location,
+                    content: content,
+                    removable: true
+                })
             });
         }
     }
@@ -216,7 +243,14 @@ export const changeMarker = (type, map) => {
         //마커 클릭 이벤트
         for (let i=0; i<storeMarkers.length; i++) {
             kakao.maps.event.addListener(storeMarkers[i], 'click', function () {
-                alert('click!'+ facPos.positionCvtStore[i].title);
+
+                let content = createHtmlContent(positionCvtStore[i].title)
+                var infoWindow = new kakao.maps.InfoWindow({
+                    map: map,
+                    position: positionCvtStore[i].location,
+                    content: content,
+                    removable: true
+                })
             });
         }
     }
@@ -231,7 +265,14 @@ export const changeMarker = (type, map) => {
         //마커 클릭 이벤트
         for (let i=0; i<rstrtMarkers.length; i++) {
             kakao.maps.event.addListener(rstrtMarkers[i], 'click', function () {
-                alert('click!'+ facPos.positionRstrt[i].title);
+
+                let content = createHtmlContent(positionRstrt[i].title)
+                var infoWindow = new kakao.maps.InfoWindow({
+                    map: map,
+                    position: positionRstrt[i].location,
+                    content: content,
+                    removable: true
+                })
             });
         }
     }
@@ -246,7 +287,14 @@ export const changeMarker = (type, map) => {
         //마커 클릭 이벤트
         for (let i=0; i<atmMarkers.length; i++) {
             kakao.maps.event.addListener(atmMarkers[i], 'click', function () {
-                alert('click!'+ facPos.positionATM[i].title);
+
+                let content = createHtmlContent(positionATM[i].title)
+                var infoWindow = new kakao.maps.InfoWindow({
+                    map: map,
+                    position: positionATM[i].location,
+                    content: content,
+                    removable: true
+                })
             });
         }
     }
@@ -261,7 +309,14 @@ export const changeMarker = (type, map) => {
         //마커 클릭 이벤트
         for (let i=0; i<printMarkers.length; i++) {
             kakao.maps.event.addListener(printMarkers[i], 'click', function () {
-                alert('click!'+ facPos.positionPrint[i].title);
+
+                let content = createHtmlContent(positionPrint[i].title)
+                var infoWindow = new kakao.maps.InfoWindow({
+                    map: map,
+                    position: positionPrint[i].location,
+                    content: content,
+                    removable: true
+                })
             });
         }
     }
