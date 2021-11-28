@@ -7,6 +7,7 @@ import {
     positionPrint,
     positionRstrt
 } from "./facilityPosition";
+import "./infoWindow.css";
 
 const {kakao} = window;
 
@@ -174,8 +175,9 @@ const setAtmMarkers = (map) => {
     }
 }
 
+//인포윈도우 html 생성
 function createHtmlContent(title) {
-    let str = "<div className='mapContent'>" + title + "</div>"
+    let str = "<div></div><div class='mapContent'><p class='test'>" + title + "</p></div>"
     return str;
 }
 
