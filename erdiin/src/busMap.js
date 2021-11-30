@@ -11,7 +11,13 @@ const MapContainer = () => {
     
     useEffect(() => {
 
-        busMarker();
+        const container = document.getElementById('myMap');
+        const options = {
+        center: new kakao.maps.LatLng(33.45606028280052, 126.56205448172588),
+        level: 3
+        };
+    
+        map = new kakao.maps.Map(container, options);
 
         facLoc.createOfficeMarkers();
         facLoc.createStoreMarkers();
@@ -38,38 +44,18 @@ const MapContainer = () => {
                         </ul>
                     </div>  
                 </div>
-                <div className="bus">순환버스</div>
+                <div className="bus" onClick={() => busMarker()}><button>순환버스</button></div>
             </div>
         </div>
     );
 }
 
-
-// const createMap = () => {
-//     const container = document.getElementById('myMap');
-//     const options = {
-//     center: new kakao.maps.LatLng(33.45606028280052, 126.56205448172588),
-//     level: 3
-//     };
-//     const map = new kakao.maps.Map(container, options);
-    
-//     return map;
-// }
-
 const busMarker = () =>{
-    const container = document.getElementById('myMap');
-    const options = {
-    center: new kakao.maps.LatLng(33.45606028280052, 126.56205448172588),
-    level: 3
-    };
-
-    map = new kakao.maps.Map(container, options);
-
     const imageSrc_A = "https://github.com/dhflxhdxhd/JNU_InformationWeb/blob/main/img/bus-stop.png?raw=true"; 
     const imageSrc_B = "https://github.com/JNU-erdiin/JNU_InformationWeb/blob/main/img/bus-stop-red.png?raw=true"; 
 
      // 마커 이미지의 이미지 크기 입니다
-    const imageSize = new kakao.maps.Size(40,40); 
+    const imageSize = new kakao.maps.Size(30,30); 
     
      // 마커 이미지를 생성합니다    
     const markerImage_A = new kakao.maps.MarkerImage(imageSrc_A, imageSize); 
