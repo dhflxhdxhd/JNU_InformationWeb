@@ -1,0 +1,9 @@
+.mapContent {
+    position: relative;
+    padding: 5px;
+    white-space: nowrap;
+}
+
+.test {
+    padding-right: 8px;
+}
