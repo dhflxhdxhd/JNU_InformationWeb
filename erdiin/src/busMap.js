@@ -44,11 +44,17 @@ const MapContainer = () => {
                         </ul>
                     </div>  
                 </div>
+                {/* btn 누르면 marker 없어지도록 추가하기 */}
                 <div className="bus" onClick={() => busMarker()}><button>순환버스</button></div>
             </div>
         </div>
     );
 }
+
+// const busMarkerAction = () => {
+//     const busbtn = document.querySelector(".bus");
+
+// }
 
 const busMarker = () =>{
     const imageSrc_A = "https://github.com/dhflxhdxhd/JNU_InformationWeb/blob/main/img/bus-stop.png?raw=true"; 
