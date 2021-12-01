@@ -1,4 +1,6 @@
 import * as facPos from './facilityPosition';
+import * as bus from './bus'
+
 import {
     positionATM,
     positionCvtStore,
@@ -46,7 +48,7 @@ export const createOfficeMarkers = () => {
 }
 
 //과사무실 마커들의 지도 표시 여부 설정 함수
-const setOfficeMarkers = (map) => {
+export const setOfficeMarkers = (map) => {
     for (let i=0; i<officeMarkers.length; i++) {
         officeMarkers[i].setMap(map);
     }
@@ -70,7 +72,7 @@ export const createEtcMarkers = () => {
 }
 
 //기타시설 마커들의 지도 표시 여부 설정 함수
-const setEtcMarkers = (map) => {
+export const setEtcMarkers = (map) => {
     for (let i=0; i<etcMarkers.length; i++) {
         etcMarkers[i].setMap(map);
     }
@@ -95,7 +97,7 @@ export const createRstrtMarkers = () => {
 }
 
 //식당 마커들의 지도 표시 여부 설정 함수
-const setRstrtMarkers = (map) => {
+export const setRstrtMarkers = (map) => {
     for (let i=0; i<rstrtMarkers.length; i++) {
         rstrtMarkers[i].setMap(map);
     }
@@ -120,7 +122,7 @@ export const createStoreMarkers = () => {
 }
 
 //매점 마커들의 지도 표시 여부 설정 함수
-const setStoreMarkers = (map) => {
+export const setStoreMarkers = (map) => {
     for (let i=0; i<storeMarkers.length; i++) {
         storeMarkers[i].setMap(map);
     }
@@ -145,7 +147,7 @@ export const createPrintMarkers = () => {
 }
 
 //프린터기 마커들의 지도 표시 여부 설정 함수
-const setPrintMarkers = (map) => {
+export const setPrintMarkers = (map) => {
     for (let i=0; i<printMarkers.length; i++) {
         printMarkers[i].setMap(map);
     }
@@ -169,7 +171,7 @@ export const createAtmMarkers = () => {
 }
 
 //atm 마커들의 지도 표시 여부 설정 함수
-const setAtmMarkers = (map) => {
+export const setAtmMarkers = (map) => {
     for (let i=0; i<atmMarkers.length; i++) {
         atmMarkers[i].setMap(map);
     }
@@ -191,6 +193,8 @@ export const changeMarker = (type, map) => {
     let print = document.getElementById('print');
 
     if (type === 'office') {
+        bus.setBusMarkers_A(null);
+        bus.setBusMarkers_B(null);
         setOfficeMarkers(map);
         setStoreMarkers(null);
         setEtcMarkers(null);
@@ -213,6 +217,8 @@ export const changeMarker = (type, map) => {
         }
     }
     else if (type === 'etc') {
+        bus.setBusMarkers_A(null);
+        bus.setBusMarkers_B(null);
         setOfficeMarkers(null);
         setStoreMarkers(null);
         setEtcMarkers(map);
@@ -235,6 +241,8 @@ export const changeMarker = (type, map) => {
         }
     }
     else if (type === 'store') {
+        bus.setBusMarkers_A(null);
+        bus.setBusMarkers_B(null);
         setOfficeMarkers(null);
         setStoreMarkers(map);
         setEtcMarkers(null);
@@ -257,6 +265,8 @@ export const changeMarker = (type, map) => {
         }
     }
     else if (type === 'rstrt') {
+        bus.setBusMarkers_A(null);
+        bus.setBusMarkers_B(null);
         setOfficeMarkers(null);
         setStoreMarkers(null);
         setEtcMarkers(null);
@@ -279,6 +289,8 @@ export const changeMarker = (type, map) => {
         }
     }
     else if (type === 'atm') {
+        bus.setBusMarkers_A(null);
+        bus.setBusMarkers_B(null);
         setOfficeMarkers(null);
         setStoreMarkers(null);
         setEtcMarkers(null);
@@ -301,6 +313,8 @@ export const changeMarker = (type, map) => {
         }
     }
     else if (type === 'print') {
+        bus.setBusMarkers_A(null);
+        bus.setBusMarkers_B(null);
         setOfficeMarkers(null);
         setStoreMarkers(null);
         setEtcMarkers(null);

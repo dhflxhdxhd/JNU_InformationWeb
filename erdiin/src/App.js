@@ -1,14 +1,14 @@
 // import logo from './logo.svg';
 import './App.css';
 import MapContainer from './busMap';
-
-const {kakao} = window;
-let map;
+// import navlist from './nav'
 
 function App() {  
   return (
     <div className="wrapper">
+
       <MapContainer />
+
     </div>
   );
 }
