@@ -57,10 +57,4 @@ const MapContainer = () => {
     );
 }
 
-// const busMarkerAction = () => {
-//     const busbtn = document.querySelector(".bus");
-
-// }
-
-
 export default MapContainer

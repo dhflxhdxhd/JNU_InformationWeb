@@ -1,5 +1,6 @@
 import './busMap.css'
 import {positionA, positionB} from './positions.js'
+import * as facLoc from './FacilityLocationInfo';
 
 const {kakao} = window;
 let busMarkers_A = [];
@@ -42,13 +43,13 @@ const createBusMarkers = () => {
     }
 }
 
-const setBusMarkers_A = (map) => {
+export const setBusMarkers_A = (map) => {
     for(let i=0; i<busMarkers_A.length; i++){
         busMarkers_A[i].setMap(map); 
     }
 }
 
-const setBusMarkers_B = (map) => {
+export const setBusMarkers_B = (map) => {
     for(let i=0; i<busMarkers_B.length; i++){
         busMarkers_B[i].setMap(map); 
     }
@@ -65,6 +66,12 @@ const changeMarker = (type,map) => {
     if (type === 'bus'){
         setBusMarkers_A(map);
         setBusMarkers_B(map);
+        facLoc.setOfficeMarkers(null);
+        facLoc.setStoreMarkers(null);
+        facLoc.setEtcMarkers(null);
+        facLoc.setRstrtMarkers(null);
+        facLoc.setAtmMarkers(null);
+        facLoc.setPrintMarkers(null);
 
         for (let i=0; i<busMarkers_A.length; i++) {
             kakao.maps.event.addListener(busMarkers_A[i], 'click', function () {
