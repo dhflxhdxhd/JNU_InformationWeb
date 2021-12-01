@@ -2,7 +2,8 @@ import './busMap.css'
 import {positionA, positionB} from './positions.js'
 
 const {kakao} = window;
-let busMarkers = [];
+let busMarkers_A = [];
+let busMarkers_B = [];
 
 const createMarker = (position, image) => {
     var marker = new kakao.maps.Marker({
@@ -16,21 +17,40 @@ const createMarker = (position, image) => {
 //과사무실 마커 생성 후 마커배열에 추가하는 함수
 const createBusMarkers = () => {
     const imageSrc_A = "https://github.com/dhflxhdxhd/JNU_InformationWeb/blob/main/img/bus-stop.png?raw=true"; 
+    const imageSrc_B = "https://github.com/JNU-erdiin/JNU_InformationWeb/blob/main/img/bus-stop-red.png?raw=true";
+    const imageSize = new kakao.maps.Size(30,30); 
+
     for (let i = 0; i < positionA.length; i ++) {
         
-        const imageSize = new kakao.maps.Size(30,30); 
+        
         let latlng = new kakao.maps.LatLng(positionA[i].lat,positionA[i].lng);
 
         let markerImage = new kakao.maps.MarkerImage(imageSrc_A,imageSize);
         let marker = createMarker(latlng,markerImage);
 
-        busMarkers.push(marker);
+        busMarkers_A.push(marker);
+    }
+
+    for (let i = 0; i < positionB.length; i ++) {
+        
+        let latlng = new kakao.maps.LatLng(positionB[i].lat,positionB[i].lng);
+
+        let markerImage = new kakao.maps.MarkerImage(imageSrc_B,imageSize);
+        let marker = createMarker(latlng,markerImage);
+
+        busMarkers_B.push(marker);
     }
 }
 
-const setBusMarkers = (map) => {
-    for(let i=0; i<busMarkers.length; i++){
-        busMarkers[i].setMap(map); 
+const setBusMarkers_A = (map) => {
+    for(let i=0; i<busMarkers_A.length; i++){
+        busMarkers_A[i].setMap(map); 
+    }
+}
+
+const setBusMarkers_B = (map) => {
+    for(let i=0; i<busMarkers_B.length; i++){
+        busMarkers_B[i].setMap(map); 
     }
 }
 
@@ -43,13 +63,28 @@ const changeMarker = (type,map) => {
     let bus = document.getElementById('bus');
 
     if (type === 'bus'){
-        setBusMarkers(map);
+        setBusMarkers_A(map);
+        setBusMarkers_B(map);
 
-        for (let i=0; i<busMarkers.length; i++) {
-            kakao.maps.event.addListener(busMarkers[i], 'click', function () {
+        for (let i=0; i<busMarkers_A.length; i++) {
+            kakao.maps.event.addListener(busMarkers_A[i], 'click', function () {
 
                 let latlng = new kakao.maps.LatLng(positionA[i].lat,positionA[i].lng);
-                let content = createHtmlContent(positionA.title)
+                let content = createHtmlContent(positionA[i].title)
+                var infoWindow = new kakao.maps.InfoWindow({
+                    map: map,
+                    position: latlng,
+                    content: content,
+                    removable: true
+                })
+            });
+        } 
+        
+        for (let i=0; i<busMarkers_B.length; i++) {
+            kakao.maps.event.addListener(busMarkers_B[i], 'click', function () {
+
+                let latlng = new kakao.maps.LatLng(positionB[i].lat,positionB[i].lng);
+                let content = createHtmlContent(positionB[i].title)
                 var infoWindow = new kakao.maps.InfoWindow({
                     map: map,
                     position: latlng,
@@ -59,10 +94,11 @@ const changeMarker = (type,map) => {
             });
         }
 
+        
     }
 }
 
-export {changeMarker, createBusMarkers}
+export {changeMarker, createBusMarkers};
 
 // const busMarker = () =>{
 
