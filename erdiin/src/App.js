@@ -1,13 +1,14 @@
 // import logo from './logo.svg';
 import './App.css';
 import MapContainer from './busMap';
-import nav from './nav'
+// import navlist from './nav'
 
 function App() {  
   return (
     <div className="wrapper">
-      <nav/>
+
       <MapContainer />
+
     </div>
   );
 }
