@@ -1,7 +1,7 @@
 import './busMap.css'
 import { useState, useEffect } from 'react';
 import {positionA, positionB} from './positions.js'
-import * as bus from './bus'
+import * as bus from './busInfo'
 import * as facLoc from './FacilityLocationInfo';
 
 const { kakao } = window;
@@ -31,11 +31,7 @@ const MapContainer = () => {
 
     return (
         <div className="map">
-            <div id='myMap'></div>
-            
-            <div className="navlist">
-                <div>들어갔나?</div>
-            </div>    
+            <div id='myMap'></div>   
             <div className="nav">
                 <div className="facility">시설정보
                     <div className="category">
