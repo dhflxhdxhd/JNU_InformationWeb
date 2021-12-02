@@ -10,9 +10,7 @@ import * as time from './time'
 function App() {  
   return (
     <div id="wrapper">
-      <div id="navlist">
-        <div>들어갔나?</div>
-      </div>
+
       <MapContainer />
     </div>
 

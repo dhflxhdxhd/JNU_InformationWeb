@@ -4,21 +4,35 @@
     box-sizing: border-box;
 }
 
+.map{
+    display: flex;
+}
+
+
 #map {
-    position: relative;
+    /* position: relative; */
     width: 100vw;
     height: 100vh;
 }
 
-.nav {
+.nav{
     position: absolute;
     top: 5%;
     left: 5%;
     z-index: 1;
     display: flex;
-    justify-content: left;
+    justify-content: right; 
     align-items: center;
 }
+
+.navlist{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    z-index: 1;
+    display: flex;
+}
+
 .facility:hover > .category> ul > li {
     display: block;
 }
