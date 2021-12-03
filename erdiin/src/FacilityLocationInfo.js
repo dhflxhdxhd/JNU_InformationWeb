@@ -1,5 +1,5 @@
 import * as facPos from './facilityPosition';
-import * as bus from './bus'
+import * as bus from './busInfo'
 
 import {
     positionATM,
