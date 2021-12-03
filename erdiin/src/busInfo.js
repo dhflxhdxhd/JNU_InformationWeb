@@ -14,7 +14,6 @@ const createMarker = (position, image) => {
     return marker;
 }
 
-
 //과사무실 마커 생성 후 마커배열에 추가하는 함수
 const createBusMarkers = () => {
     const imageSrc_A = "https://github.com/dhflxhdxhd/JNU_InformationWeb/blob/main/img/bus-stop.png?raw=true"; 

@@ -10,7 +10,6 @@ import * as time from './time'
 function App() {  
   return (
     <div id="wrapper">
-
       <MapContainer />
     </div>
 
