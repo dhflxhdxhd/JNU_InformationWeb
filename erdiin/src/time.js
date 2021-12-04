@@ -19,7 +19,9 @@ export const callTime = () => {
     let min = 0;
 
     //비교 시간
-    let busTime = '08:05';
+    // let busTime = '08:05';
+    let busTime = timeA1[0].time;
+    console.log("bustime: "+ busTime);
     busTime= busTime.split(':');
     let busHours = busTime[0];
     let busMin = busTime[1];

@@ -1,4 +1,4 @@
-const timeA1 = [
+export const timeA1 = [
     {
         title:'정문',
         time: '08:05'
