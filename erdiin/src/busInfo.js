@@ -1,6 +1,7 @@
 import './busMap.css'
 import {positionA, positionB} from './positions.js'
 import * as facLoc from './FacilityLocationInfo';
+import { callTime } from './time.js';
 
 const {kakao} = window;
 let busMarkers_A = [];
@@ -21,7 +22,6 @@ const createBusMarkers = () => {
     const imageSize = new kakao.maps.Size(30,30); 
 
     for (let i = 0; i < positionA.length; i ++) {
-        
         
         let latlng = new kakao.maps.LatLng(positionA[i].lat,positionA[i].lng);
 
@@ -55,7 +55,7 @@ export const setBusMarkers_B = (map) => {
 }
 
 function createHtmlContent(title) {
-    let str = "<div></div><div class='mapContent'><p class='test'>" + title + "</p></div>"
+    let str = "<div></div><div class='mapContent'><p class='test'>" + title + "</p></div> " ;
     return str;
 }
 
@@ -80,7 +80,7 @@ const changeMarker = (type,map) => {
                 var infoWindow = new kakao.maps.InfoWindow({
                     map: map,
                     position: latlng,
-                    content: content,
+                    content: content + callTime('A',i),
                     removable: true
                 })
             });
@@ -94,13 +94,12 @@ const changeMarker = (type,map) => {
                 var infoWindow = new kakao.maps.InfoWindow({
                     map: map,
                     position: latlng,
-                    content: content,
+                    content: content + callTime('B',i),
                     removable: true
                 })
             });
         }
 
-        
     }
 }
 

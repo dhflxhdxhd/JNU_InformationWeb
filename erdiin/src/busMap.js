@@ -18,6 +18,7 @@ const MapContainer = () => {
     
         map = new kakao.maps.Map(container, options);
 
+
         bus.createBusMarkers();
         facLoc.createOfficeMarkers();
         facLoc.createStoreMarkers();
@@ -30,7 +31,7 @@ const MapContainer = () => {
 
     return (
         <div className="map">
-            <div id="navlist">
+            {/* <div id="navlist">
                 <ul>
                     <li>순환버스</li>
                     <li>학과사무실</li>
@@ -46,7 +47,7 @@ const MapContainer = () => {
                     </a>
                     
                 </div>
-            </div>
+            </div> */}
 
             <div id='myMap'></div>   
             <div className="nav">

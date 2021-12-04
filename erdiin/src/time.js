@@ -1,22 +1,64 @@
-import React from "react";
-import moment from 'moment';
-import 'moment/locale/ko';
-import { timeA1 } from './bustime'
 
-//useInterval 사용해서 실시간으로 현재 시간 가져오기
-// 참고 https://haranglog.tistory.com/10 
-const nowTime = moment().format('HH:mm:ss');;
-console.log(nowTime);
+import { A1, B1} from './bustime'
 
-//현재시간 기준으로 timeA?의 ?값에 따른 time 데이터 설정
-// A버스 B버스 구분.
-//marker 클릭 > time_A <- 해당 marker title 위치 time 데이터 
-//nowtime <- 현재시간
-// cal <- time_A - nowtime 
-// cal이 0보다 크면 > 해당 차이값 = 도착하기까지 남은 시간
-// cal이 0보다 작으면 > ?+1 해서 차이 구함 = 도착하기까지 남은 시간 
-const calTime = () => {
+
+export const callTime = (name,num) => {
+
+    // let now = new Date();
+    // //현재 시간
+    // let hours = now.getHours();
+    // let min = now.getMinutes();
+
+    let hours = 10;
+    let min = 10;
+
+    //비교 시간
+    // let busTime = '08:05';
+    
+    for (let i=0; i<23; i++){
+        if(name === 'A'){
+            let busTime = A1[num].time[i];
+            console.log("bustime: "+ busTime);
+    
+            busTime= busTime.split(':');
+            let busHours = busTime[0];
+            let busMin = busTime[1];
+    
+            const nowTime = new Date(2020,12,4,hours,min,0);
+            const comTime = new Date(2020,12,4,busHours,busMin,0);
+            const gap = comTime.getTime() - nowTime.getTime();
+
+            if (gap > 0){
+                // console.log(Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60)));
+                return Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60))
+            }
+        }else{
+            let busTime = B1[num].time[i];
+            console.log("bustime: "+ busTime);
+    
+            busTime= busTime.split(':');
+            let busHours = busTime[0];
+            let busMin = busTime[1];
+    
+            const nowTime = new Date(2020,12,4,hours,min,0);
+            const comTime = new Date(2020,12,4,busHours,busMin,0);
+            const gap = comTime.getTime() - nowTime.getTime();
+
+            if (gap > 0){
+                // console.log(Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60)));
+                return Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60))
+            }
+
+        }
+
+
+       
+
+
+    }   
+
 }
+
 
 
 
