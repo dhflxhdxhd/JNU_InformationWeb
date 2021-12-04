@@ -2,7 +2,6 @@ import './busMap.css'
 import { useEffect } from 'react';
 import * as bus from './busInfo'
 import * as facLoc from './FacilityLocationInfo';
-import { callTime } from './time.js';
 
 const { kakao } = window;
 let map;
@@ -28,14 +27,11 @@ const MapContainer = () => {
         facLoc.createPrintMarkers();
         facLoc.createEtcMarkers();
 
-        callTime();
-
-
     }, []);
 
     return (
         <div className="map">
-            <div id="navlist">
+            {/* <div id="navlist">
                 <ul>
                     <li>순환버스</li>
                     <li>학과사무실</li>
@@ -51,7 +47,7 @@ const MapContainer = () => {
                     </a>
                     
                 </div>
-            </div>
+            </div> */}
 
             <div id='myMap'></div>   
             <div className="nav">
