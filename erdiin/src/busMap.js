@@ -2,6 +2,7 @@ import './busMap.css'
 import { useEffect } from 'react';
 import * as bus from './busInfo'
 import * as facLoc from './FacilityLocationInfo';
+import { callTime } from './time.js';
 
 const { kakao } = window;
 let map;
@@ -18,6 +19,7 @@ const MapContainer = () => {
     
         map = new kakao.maps.Map(container, options);
 
+
         bus.createBusMarkers();
         facLoc.createOfficeMarkers();
         facLoc.createStoreMarkers();
@@ -25,6 +27,9 @@ const MapContainer = () => {
         facLoc.createAtmMarkers();
         facLoc.createPrintMarkers();
         facLoc.createEtcMarkers();
+
+        callTime();
+
 
     }, []);
 
