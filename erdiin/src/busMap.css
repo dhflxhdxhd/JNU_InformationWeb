@@ -1,9 +1,16 @@
+@font-face {
+    font-family: 'InfinitySans-RegularA1';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-RegularA1.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: InfinitySans-RegularA1;
 }
-
 
 #navlist{
     position: absolute;
@@ -58,30 +65,48 @@
   }
   
 
-.nav {
+#float {
     position: absolute;
-    top: 5%;
-    left: 85%;
+    top: 10%;
+    left: 80%;
     z-index: 1;
     display: flex;
     justify-content: left;
     align-items: center;
 }
-
-
-.facility:hover > .category> ul > li {
-    display: block;
+.facility, .bus {
+    width: 80px;
+    height: 30px;
+    border-radius: 5%;
+    margin-left: 5px;
+}
+.categoryBtn, .busBtn {
+    width: 80px;
+    height: 30px;
+    border-style: none;
+    border-radius: 5%;
+    background: white;
+    box-shadow: 1px 2px 2px grey;
+}
+.categoryBtn {
+    margin-bottom: 5px;
 }
 .category {
-    position: relative;
-}
-.category > ul {
-    position: absolute;
-}
-.facility_info {
-    list-style: none;
     display: none;
 }
+
+.facility_info {
+    list-style: none;
+}
+.category .btn {
+    width: 80px;
+    height: 25px;
+    margin-bottom: 2px;
+    background: white;
+    border: 1px solid black;
+    border-radius: 2%;
+}
+
 
 /*버스 InfoWindow 구성*/
 .busContent{

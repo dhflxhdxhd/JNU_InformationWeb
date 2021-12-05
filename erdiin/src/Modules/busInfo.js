@@ -1,5 +1,5 @@
-import './busMap.css'
-import {positionA, positionB} from './positions.js'
+import '../busMap.css'
+import {positionA, positionB} from '../Item/positions.js'
 import * as facLoc from './FacilityLocationInfo';
 import { callTime } from './time.js';
 

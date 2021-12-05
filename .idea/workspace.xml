@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cbef8925-edc9-433e-aaa2-1858a19a83ce" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/erdiin/src/infoWindow.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/erdiin/src/FacilityLocationInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/erdiin/src/FacilityLocationInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/erdiin/src/facilityPosition.js" beforeDir="false" afterPath="$PROJECT_DIR$/erdiin/src/facilityPosition.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erdiin/src/FacilityLocationInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/erdiin/src/Modules/FacilityLocationInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erdiin/src/busInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/erdiin/src/Modules/busInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erdiin/src/busMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/erdiin/src/busMap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erdiin/src/bustime.js" beforeDir="false" afterPath="$PROJECT_DIR$/erdiin/src/Item/bustime.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erdiin/src/facilityPosition.js" beforeDir="false" afterPath="$PROJECT_DIR$/erdiin/src/Item/facilityPosition.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erdiin/src/infoWindow.css" beforeDir="false" afterPath="$PROJECT_DIR$/erdiin/src/Modules/infoWindow.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erdiin/src/positions.js" beforeDir="false" afterPath="$PROJECT_DIR$/erdiin/src/Item/positions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erdiin/src/time.js" beforeDir="false" afterPath="$PROJECT_DIR$/erdiin/src/Modules/time.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +50,13 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="yarn" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\tooth\Desktop\Capstone Project\JNU_InformationWeb\erdiin\src" />
+      <recent name="C:\Users\tooth\Desktop\Capstone Project\JNU_InformationWeb\erdiin\src\Modules" />
+      <recent name="C:\Users\tooth\Desktop\Capstone Project\JNU_InformationWeb\erdiin\src\Item" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -58,7 +70,10 @@
       <workItem from="1637930816424" duration="4994000" />
       <workItem from="1637975216442" duration="6197000" />
       <workItem from="1637982908870" duration="14000" />
-      <workItem from="1638079671414" duration="5626000" />
+      <workItem from="1638079671414" duration="5737000" />
+      <workItem from="1638424674298" duration="207000" />
+      <workItem from="1638689370023" duration="4451000" />
+      <workItem from="1638710520774" duration="7923000" />
     </task>
     <servers />
   </component>
