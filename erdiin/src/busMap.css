@@ -65,27 +65,48 @@
   }
   
 
-.nav {
+#float {
     position: absolute;
-    top: 5%;
-    left: 85%;
+    top: 10%;
+    left: 80%;
     z-index: 1;
     display: flex;
     justify-content: left;
     align-items: center;
 }
-
+.facility, .bus {
+    width: 80px;
+    height: 30px;
+    border-radius: 5%;
+    margin-left: 5px;
+}
+.categoryBtn, .busBtn {
+    width: 80px;
+    height: 30px;
+    border-style: none;
+    border-radius: 5%;
+    background: white;
+    box-shadow: 1px 2px 2px grey;
+}
+.categoryBtn {
+    margin-bottom: 5px;
+}
 .category {
-    position: relative;
-    /*display: none;*/
+    display: none;
 }
-.category > ul {
-    position: absolute;
-}
+
 .facility_info {
     list-style: none;
-    /*display: none;*/
 }
+.category .btn {
+    width: 80px;
+    height: 25px;
+    margin-bottom: 2px;
+    background: white;
+    border: 1px solid black;
+    border-radius: 2%;
+}
+
 
 /*버스 InfoWindow 구성*/
 .busContent{

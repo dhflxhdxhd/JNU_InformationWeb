@@ -31,18 +31,15 @@ const MapContainer = () => {
     }, []);
 
     const btnClick = () => {
-        /*
-        if(flag===0) {
-            document.getElementsByClassName('category').show();
+        if (flag===0) {
+            document.querySelector('.category').style.display = "block";
             flag = 1;
-        } else if (flag ===1) {
-            document.getElementsByClassName('category').hide();
-            flag = 0;
         }
-         */
+        else if (flag===1) {
+            document.querySelector('.category').style.display = "none";
+            flag=0;
+        }
     }
-
-
 
     return (
         <div className="map">
@@ -65,9 +62,9 @@ const MapContainer = () => {
             </div> */}
 
             <div id='myMap'></div>   
-            <div className="nav">
+            <div id="float" className="float btn">
                 <div className="facility">
-                    <button className="btnCategory" onClick={() => btnClick()}>시설정보</button>
+                    <button className="categoryBtn" onClick={() => btnClick()}>시설정보</button>
                     <div id="categoryWrapper">
                         <ul className="category">
                             <li id="store" className="facility_info"><button className="btn conv" onClick={() => facLoc.changeMarker('store', map)}>편의점</button></li>
@@ -80,7 +77,7 @@ const MapContainer = () => {
                     </div>
                 </div>
                 {/* btn 누르면 marker 없어지도록 추가하기 */}
-                <div id="bus" className="bus" onClick={() => bus.changeMarker('bus',map)}><button>순환버스</button></div>
+                <div id="bus" className="bus" onClick={() => bus.changeMarker('bus',map)}><button className= "busBtn">순환버스</button></div>
             </div>
         </div>
     );
