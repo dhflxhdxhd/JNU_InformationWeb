@@ -54,8 +54,8 @@ export const setBusMarkers_B = (map) => {
     }
 }
 
-function createHtmlContent(title) {
-    let str = "<div></div><div class='mapContent'><p class='test'>" + title + "</p></div> " ;
+function createHtmlContent(title,name,num) {
+    let str = "<div class='busContent'><div class='busstop'>" + title + "</div><div class='limit'>"+ setInterval(callTime(name,num),30000)+"분 뒤에 버스가 도착합니다.</div></div>" ;
     return str;
 }
 
@@ -76,11 +76,11 @@ const changeMarker = (type,map) => {
             kakao.maps.event.addListener(busMarkers_A[i], 'click', function () {
 
                 let latlng = new kakao.maps.LatLng(positionA[i].lat,positionA[i].lng);
-                let content = createHtmlContent(positionA[i].title)
+                let content = createHtmlContent(positionA[i].title,'A',i);
                 var infoWindow = new kakao.maps.InfoWindow({
                     map: map,
                     position: latlng,
-                    content: content + callTime('A',i),
+                    content: content,
                     removable: true
                 })
             });
@@ -90,11 +90,11 @@ const changeMarker = (type,map) => {
             kakao.maps.event.addListener(busMarkers_B[i], 'click', function () {
 
                 let latlng = new kakao.maps.LatLng(positionB[i].lat,positionB[i].lng);
-                let content = createHtmlContent(positionB[i].title)
+                let content = createHtmlContent(positionB[i].title,'B',i);
                 var infoWindow = new kakao.maps.InfoWindow({
                     map: map,
                     position: latlng,
-                    content: content + callTime('B',i),
+                    content: content,
                     removable: true
                 })
             });
@@ -104,58 +104,3 @@ const changeMarker = (type,map) => {
 }
 
 export {changeMarker, createBusMarkers};
-
-// const busMarker = () =>{
-
-
-//     const imageSrc_A = "https://github.com/dhflxhdxhd/JNU_InformationWeb/blob/main/img/bus-stop.png?raw=true"; 
-//     const imageSrc_B = "https://github.com/JNU-erdiin/JNU_InformationWeb/blob/main/img/bus-stop-red.png?raw=true"; 
-
-//     // eslint-disable-next-line react-hooks/rules-of-hooks
-//     // const [isVisible] = useState(true);
-
-//      // 마커 이미지의 이미지 크기 입니다
-//     const imageSize = new kakao.maps.Size(30,30); 
-    
-//      // 마커 이미지를 생성합니다    
-//     const markerImage_A = new kakao.maps.MarkerImage(imageSrc_A, imageSize); 
-//     const markerImage_B = new kakao.maps.MarkerImage(imageSrc_B, imageSize); 
-
-//     for (let i = 0; i < positionA.length; i ++) {
-
-        
-//         let latlng = new kakao.maps.LatLng(positionA[i].lat,positionA[i].lng);
-//         let title = positionA[i].title
-
-//         // 마커를 생성합니다
-//         let marker = new kakao.maps.Marker({
-//             map: map, // 마커를 표시할 지도
-//             position: latlng, // 마커를 표시할 위치
-//             title : title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
-//             image : markerImage_A // 마커 이미지 
-//         });
-
-//         let infoWindow = new kakao.maps.infoWindow({
-//             content : title
-//         });
-    
-//         kakao.maps.event.addListener(marker,'mouseover',infoWindow.open(map,marker,infoWindow));
-//         kakao.maps.event.addListener(marker,'mouseover',infoWindow.close(infoWindow));
-
-    // }
-
-//     for (let i = 0; i < positionB.length; i ++) {
-//         let latlng = new kakao.maps.LatLng(positionB[i].lat,positionB[i].lng);
-//         let title = positionA[i].title
-
-//         // 마커를 생성합니다
-//         let marker = new kakao.maps.Marker({
-//             map: map, // 마커를 표시할 지도
-//             position: latlng, // 마커를 표시할 위치
-//             title : title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
-//             image : markerImage_B // 마커 이미지 
-//         });
-//     }
-    
-
-// }
