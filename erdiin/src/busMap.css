@@ -68,17 +68,14 @@
     align-items: center;
 }
 
-
-.facility:hover > .category> ul > li {
-    display: block;
-}
 .category {
     position: relative;
+    /*display: none;*/
 }
 .category > ul {
     position: absolute;
 }
 .facility_info {
     list-style: none;
-    display: none;
+    /*display: none;*/
 }
