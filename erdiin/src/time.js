@@ -4,13 +4,13 @@ import { A1, B1} from './bustime'
 
 export const callTime = (name,num) => {
 
-    // let now = new Date();
-    // //현재 시간
-    // let hours = now.getHours();
-    // let min = now.getMinutes();
+    let now = new Date();
+    //현재 시간
+    let hours = now.getHours();
+    let min = now.getMinutes();
 
-    let hours = 10;
-    let min = 10;
+    // let hours = 10;
+    // let min = 10;
 
     //비교 시간
     // let busTime = '08:05';
@@ -51,12 +51,7 @@ export const callTime = (name,num) => {
 
         }
 
-
-       
-
-
     }   
-
 }
 
 
