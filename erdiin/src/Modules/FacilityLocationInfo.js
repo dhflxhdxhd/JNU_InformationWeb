@@ -1,4 +1,4 @@
-import * as facPos from './facilityPosition';
+import * as facPos from '../Item/facilityPosition';
 import * as bus from './busInfo'
 
 import {
@@ -8,7 +8,7 @@ import {
     positionOffice,
     positionPrint,
     positionRstrt
-} from "./facilityPosition";
+} from "../Item/facilityPosition";
 import "./infoWindow.css";
 
 const {kakao} = window;

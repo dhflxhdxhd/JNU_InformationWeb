@@ -1,7 +1,7 @@
 import './busMap.css'
 import { useEffect } from 'react';
-import * as bus from './busInfo'
-import * as facLoc from './FacilityLocationInfo';
+import * as bus from './Modules/busInfo'
+import * as facLoc from './Modules/FacilityLocationInfo';
 
 const { kakao } = window;
 let map;
