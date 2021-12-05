@@ -54,8 +54,8 @@ export const setBusMarkers_B = (map) => {
     }
 }
 
-function createHtmlContent(title) {
-    let str = "<div></div><div class='mapContent'><p class='test'>" + title + "</p></div> " ;
+function createHtmlContent(title,name,num) {
+    let str = "<div class='busContent'><div class='busstop'>" + title + "</div><div class='limit'>"+ callTime(name,num)+"</div></div>" ;
     return str;
 }
 
@@ -76,11 +76,11 @@ const changeMarker = (type,map) => {
             kakao.maps.event.addListener(busMarkers_A[i], 'click', function () {
 
                 let latlng = new kakao.maps.LatLng(positionA[i].lat,positionA[i].lng);
-                let content = createHtmlContent(positionA[i].title)
+                let content = createHtmlContent(positionA[i].title,'A',i);
                 var infoWindow = new kakao.maps.InfoWindow({
                     map: map,
                     position: latlng,
-                    content: content + callTime('A',i),
+                    content: content,
                     removable: true
                 })
             });
@@ -90,11 +90,11 @@ const changeMarker = (type,map) => {
             kakao.maps.event.addListener(busMarkers_B[i], 'click', function () {
 
                 let latlng = new kakao.maps.LatLng(positionB[i].lat,positionB[i].lng);
-                let content = createHtmlContent(positionB[i].title)
+                let content = createHtmlContent(positionB[i].title,'B',i);
                 var infoWindow = new kakao.maps.InfoWindow({
                     map: map,
                     position: latlng,
-                    content: content + callTime('B',i),
+                    content: content,
                     removable: true
                 })
             });
