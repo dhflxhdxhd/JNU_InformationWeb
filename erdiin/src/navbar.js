@@ -13,16 +13,19 @@ export const Header = () => {
   
     return(
 
+        <div>
         <div className="navBar-wrapper">
-                <ul className="navBar">
-                    <li onClick={()=>toggleMenu()}>순환버스</li>                      
-                    <li onClick={()=>toggleMenu()}>학과정보</li>
-                    <li onClick={()=>toggleMenu()}>시설정보</li>
-                </ul>
-                <div className={isOpen ? "navBar-contents show-menu" : "navBar-contents hide-menu"} > 
-                    <div>navBar contents</div>
-                </div>
+            <ul className="navBar">
+                <li onClick={()=>toggleMenu()}>순환버스</li>                      
+                <li onClick={()=>toggleMenu()}>학과정보</li>
+                <li onClick={()=>toggleMenu()}>시설정보</li>
+            </ul>
+        </div>    
+        <div className={isOpen ? "navBar-contents show-menu" : "navBar-contents hide-menu"} > 
+            <div>navBar contents</div>
         </div>
+        </div>
+        
     )
   
 
