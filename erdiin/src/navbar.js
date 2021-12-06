@@ -3,6 +3,8 @@
 import React,{useState} from 'react';
 import './navbar.css'
 import {positionOffice} from "./Item/facilityPosition";
+import * as facLoc from "./Modules/FacilityLocationInfo";
+import {map} from "./busMap";
 
 export const Header = () => {
 
@@ -85,12 +87,51 @@ export const Header = () => {
             </div>
             <div className={isOpen3 ? "navBar-contents show-menu" : "navBar-contents hide-menu"} >
                 <div>contents &97; 시설정보</div>
+                <p>궁금한 편의시설 버튼을 눌러주세요.</p>
+                <div className="wrapper">
+                    <ul className="navCategory">
+                        <li id="store" className="facility_info">
+                            <button className="btn conv" onClick={() => facLoc.changeMarker('store', map)}>
+                                <img className="facilityIcon" src="https://github.com/nayeon0731/JNU_InformationWeb/blob/main/img/store.png?raw=true" alt="편의점아이콘"/>
+                                편의점
+                            </button>
+                        </li>
+                        <li id="atm" className="facility_info">
+                            <button className="btn atm" onClick={() => facLoc.changeMarker('atm', map)}>
+                                <img className="facilityIcon" src="https://github.com/nayeon0731/JNU_InformationWeb/blob/main/img/atm.png?raw=true" alt="atm아이콘"/>
+                                ATM
+                            </button>
+                        </li>
+                        <li id="office" className="facility_info">
+                            <button className="btn room" onClick={() => facLoc.changeMarker('office', map)}>
+                                <img className="facilityIcon" src="https://github.com/nayeon0731/JNU_InformationWeb/blob/main/img/office.png?raw=true" alt="과사무실 아이콘"/>
+                                과사무실
+                            </button>
+                        </li>
+                        <li id="rstrt" className="facility_info">
+                            <button className="btn cafe" onClick={() => facLoc.changeMarker('rstrt', map)}>
+                                <img className="facilityIcon" src="https://github.com/nayeon0731/JNU_InformationWeb/blob/main/img/restaurant.png?raw=true" alt="식당아이콘"/>
+                                식당
+                            </button>
+                        </li>
+                        <li id="print" className="facility_info">
+                            <button className="btn cafe" onClick={() => facLoc.changeMarker('print', map)}>
+                                <img className="facilityIcon" src="https://github.com/nayeon0731/JNU_InformationWeb/blob/main/img/print.png?raw=true" alt="프린터기 아이콘"/>
+                                프린터기
+                            </button>
+                        </li>
+                        <li id="etc" className="facility_info">
+                            <button className="btn etc" onClick={() => facLoc.changeMarker('etc', map)}>
+                                <img className="facilityIcon" src="https://github.com/nayeon0731/JNU_InformationWeb/blob/main/img/information.png?raw=true" alt="기타 아이콘"/>
+                                기타
+                            </button>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
 
     )
-
-
 
 }
 
