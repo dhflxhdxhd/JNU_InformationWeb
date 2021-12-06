@@ -4,51 +4,6 @@
     box-sizing: border-box;
 }
 
-
-#navlist{
-    position: absolute;
-    z-index: 1;
-    width: 130px;
-    height: 100%;
-    border: 1px solid black;
-    background-color: #353B48;
-}
-
-#navlist ul{
-    list-style: none;
-    width: 130px;   
-}
-
-#navlist li{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    background-color: #353B48;
-    border-bottom: 1px solid white;
-    height: 120px;
-    color:white;
-    font-size: 18px;
-    cursor: pointer;
-}
-
-#navlist li:hover{
-    background-color: #ECF0F1;
-    /* color: #353B48; */
-}
-
-#navContents {
-    height: 100%;
-    width: 334px;
-    position: absolute;
-    left: 130px;
-    overflow: hidden;
-    z-index: 1;
-    background-color: white;
-    box-shadow: 0 0 7px grey inset, 0 0 7px dimgray;
-}
-
-
 #myMap {
     width: 100%;  
     height: 100vh;
