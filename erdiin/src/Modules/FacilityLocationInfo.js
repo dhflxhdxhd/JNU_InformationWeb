@@ -1,4 +1,4 @@
-import * as facPos from './facilityPosition';
+import * as facPos from '../Item/facilityPosition';
 import * as bus from './busInfo'
 
 import {
@@ -8,7 +8,7 @@ import {
     positionOffice,
     positionPrint,
     positionRstrt
-} from "./facilityPosition";
+} from "../Item/facilityPosition";
 import "./infoWindow.css";
 
 const {kakao} = window;
@@ -179,7 +179,7 @@ export const setAtmMarkers = (map) => {
 
 //인포윈도우 html 생성
 function createHtmlContent(title) {
-    let str = "<div></div><div class='mapContent'><p class='test'>" + title + "</p></div>"
+    let str = "<div class='mapContent'>" + title + "</div>"
     return str;
 }
 

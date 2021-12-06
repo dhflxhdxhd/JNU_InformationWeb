@@ -1,5 +1,5 @@
 
-import { A1, B1} from './bustime'
+import { A1, B1} from '../Item/bustime.js'
 
 
 export const callTime = (name,num) => {
