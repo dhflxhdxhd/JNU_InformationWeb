@@ -69,14 +69,41 @@ const MapContainer = () => {
                     <div id="categoryWrapper">
                         <ul className="category">
                             <li id="store" className="facility_info">
-                                <img className="facilityIcon" src="" alt="편의점아이콘"/>
-                                <button className="btn conv" onClick={() => facLoc.changeMarker('store', map)}>편의점</button>
+                                <button className="btn conv" onClick={() => facLoc.changeMarker('store', map)}>
+                                    <img className="facilityIcon" src="https://github.com/nayeon0731/JNU_InformationWeb/blob/main/img/store.png?raw=true" alt="편의점아이콘"/>
+                                    편의점
+                                </button>
                             </li>
-                            <li id="atm" className="facility_info"><button className="btn atm" onClick={() => facLoc.changeMarker('atm', map)}>ATM</button></li>
-                            <li id="office" className="facility_info"><button className="btn room" onClick={() => facLoc.changeMarker('office', map)}>과사무실</button></li>
-                            <li id="rstrt" className="facility_info"><button className="btn cafe" onClick={() => facLoc.changeMarker('rstrt', map)}>식당</button></li>
-                            <li id="print" className="facility_info"><button className="btn cafe" onClick={() => facLoc.changeMarker('print', map)}>프린터기</button></li>
-                            <li id="etc" className="facility_info"><button className="btn cafe" onClick={() => facLoc.changeMarker('etc', map)}>기타</button></li>
+                            <li id="atm" className="facility_info">
+                                <button className="btn atm" onClick={() => facLoc.changeMarker('atm', map)}>
+                                    <img className="facilityIcon" src="https://github.com/nayeon0731/JNU_InformationWeb/blob/main/img/atm.png?raw=true" alt="atm아이콘"/>
+                                    ATM
+                                </button>
+                            </li>
+                            <li id="office" className="facility_info">
+                                <button className="btn room" onClick={() => facLoc.changeMarker('office', map)}>
+                                    <img className="facilityIcon" src="https://github.com/nayeon0731/JNU_InformationWeb/blob/main/img/office.png?raw=true" alt="과사무실 아이콘"/>
+                                    과사무실
+                                </button>
+                            </li>
+                            <li id="rstrt" className="facility_info">
+                                <button className="btn cafe" onClick={() => facLoc.changeMarker('rstrt', map)}>
+                                    <img className="facilityIcon" src="https://github.com/nayeon0731/JNU_InformationWeb/blob/main/img/restaurant.png?raw=true" alt="식당아이콘"/>
+                                    식당
+                                </button>
+                            </li>
+                            <li id="print" className="facility_info">
+                                <button className="btn cafe" onClick={() => facLoc.changeMarker('print', map)}>
+                                    <img className="facilityIcon" src="https://github.com/nayeon0731/JNU_InformationWeb/blob/main/img/print.png?raw=true" alt="프린터기 아이콘"/>
+                                    프린터기
+                                </button>
+                            </li>
+                            <li id="etc" className="facility_info">
+                                <button className="btn etc" onClick={() => facLoc.changeMarker('etc', map)}>
+                                    <img className="facilityIcon" src="https://github.com/nayeon0731/JNU_InformationWeb/blob/main/img/information.png?raw=true" alt="기타 아이콘"/>
+                                    기타
+                                </button>
+                            </li>
                         </ul>
                     </div>
                 </div>

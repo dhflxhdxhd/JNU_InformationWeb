@@ -92,6 +92,11 @@
 .categoryBtn {
     margin-bottom: 5px;
 }
+.categoryBtn:hover, .busBtn:hover {
+    background: cornflowerblue;
+    color: white;
+
+}
 .category {
     display: none;
 }
@@ -104,6 +109,13 @@
     border-radius: 2%;
 }
 
+/*버튼 아이콘*/
+.facilityIcon {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-left: 5px;
+}
 
 /*버스 InfoWindow 구성*/
 .busContent{
