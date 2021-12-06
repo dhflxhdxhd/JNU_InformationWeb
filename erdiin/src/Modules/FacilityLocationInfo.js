@@ -183,6 +183,17 @@ function createHtmlContent(title) {
     return str;
 }
 
+//과사무실 인포윈도우 html
+function createOfficeHtmlContent(content) {
+    let text = '';
+    for(let i = 0; i<content.length; i++){
+        text = text + content[i].name + " " + content[i].floor + "층 " + content[i].room + "호 " + content[i].tel + "<br>";
+    }
+    let str = "<div class='mapContent'>" + text + "</div>";
+
+    return str;
+}
+
 //카테고리 클릭 시 type에 따라 카테고리 스타일, 지도 표시 마커 변경
 export const changeMarker = (type, map) => {
     let office = document.getElementById('office');
@@ -206,7 +217,7 @@ export const changeMarker = (type, map) => {
         for (let i=0; i<officeMarkers.length; i++) {
             kakao.maps.event.addListener(officeMarkers[i], 'click', function () {
 
-                let content = createHtmlContent(positionOffice[i].content)
+                let content = createOfficeHtmlContent(positionOffice[i].content)
                 var infoWindow = new kakao.maps.InfoWindow({
                     map: map,
                     position: positionOffice[i].location,
