@@ -24,7 +24,7 @@
 
 #navlist ul{
     list-style: none;
-    width: 130px;   
+    width: 130px;
 }
 
 #navlist li{
@@ -58,18 +58,18 @@
 
 
 #myMap {
-    width: 100%;  
+    width: 100%;
     height: 100vh;
     position:absolute;
     z-index : -1;
     padding-left: 464px;
-  }
-  
+}
+
 
 #float {
     position: absolute;
-    top: 10%;
-    left: 80%;
+    top: 5%;
+    left: 85%;
     z-index: 1;
     display: flex;
     justify-content: left;
@@ -126,4 +126,3 @@
 .busstop{
     font-weight: bolder;
 }
-
