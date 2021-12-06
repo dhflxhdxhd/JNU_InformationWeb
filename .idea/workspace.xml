@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cbef8925-edc9-433e-aaa2-1858a19a83ce" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/erdiin/src/navbar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/erdiin/src/navbar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/기본 세팅.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/웹 1920 – 2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/웹 1920 – 3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/웹 1920 – 4.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erdiin/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/erdiin/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/erdiin/src/busMap.css" beforeDir="false" afterPath="$PROJECT_DIR$/erdiin/src/busMap.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/erdiin/src/busMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/erdiin/src/busMap.js" afterDir="false" />
     </list>
@@ -68,7 +75,7 @@
       <workItem from="1638424674298" duration="207000" />
       <workItem from="1638689370023" duration="4451000" />
       <workItem from="1638710520774" duration="10295000" />
-      <workItem from="1638752704478" duration="11039000" />
+      <workItem from="1638752704478" duration="11586000" />
     </task>
     <servers />
   </component>

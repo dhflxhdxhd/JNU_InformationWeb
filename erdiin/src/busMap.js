@@ -1,5 +1,6 @@
 import './busMap.css'
 import { useEffect } from 'react';
+import {Header} from './navbar'
 import * as bus from './Modules/busInfo'
 import * as facLoc from './Modules/FacilityLocationInfo';
 
@@ -44,24 +45,7 @@ const MapContainer = () => {
 
     return (
         <div className="map">
-            {/* <div id="navlist">
-                <ul>
-                    <li>순환버스</li>
-                    <li>학과사무실</li>
-                    <li>시설정보</li>
-                </ul>
-            </div>
-            <div id="navContents">
-                <p>검색</p>
-                <div id="bus_input">
-                    <input type="text" placeholder="정류장을 선택하세요"></input>
-                    <a href="#">
-                        <img src="https://bus.jeju.go.kr/resources/images/btn_srch.png"></img>
-                    </a>
-                    
-                </div>
-            </div> */}
-
+            <Header />
             <div id='myMap'></div>   
             <div id="float" className="float btn">
                 <div className="facility">
