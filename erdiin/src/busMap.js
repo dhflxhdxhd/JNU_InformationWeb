@@ -2,7 +2,7 @@ import './busMap.css'
 import { useEffect } from 'react';
 import * as bus from './busInfo'
 import * as facLoc from './FacilityLocationInfo';
-import {navbar} from './navbar'
+import {Header} from './navbar'
 
 const { kakao } = window;
 let map;
@@ -32,15 +32,7 @@ const MapContainer = () => {
 
     return (
         <div className="map">
-            {/* <div id="navlist">
-                <ul>
-                    <li>순환버스</li>
-                    <li>학과사무실</li>
-                    <li>시설정보</li>
-                </ul>
-            </div> */}
-            <navbar/>
-
+            <Header />
             <div id='myMap'></div>   
             <div className="nav">
                 <div className="facility">시설정보

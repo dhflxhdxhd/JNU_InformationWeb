@@ -12,7 +12,6 @@ export const Header = () => {
     }
   
     return(
-
         <div>
         <div className="navBar-wrapper">
             <ul className="navBar">
