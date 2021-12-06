@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cbef8925-edc9-433e-aaa2-1858a19a83ce" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/img/atm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/cutlery.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/information.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/market.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/phone.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/printing.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/erdiin/src/busMap.css" beforeDir="false" afterPath="$PROJECT_DIR$/erdiin/src/busMap.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/erdiin/src/busMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/erdiin/src/busMap.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +72,8 @@
       <workItem from="1638079671414" duration="5737000" />
       <workItem from="1638424674298" duration="207000" />
       <workItem from="1638689370023" duration="4451000" />
-      <workItem from="1638710520774" duration="10055000" />
+      <workItem from="1638710520774" duration="10295000" />
+      <workItem from="1638752704478" duration="803000" />
     </task>
     <servers />
   </component>
