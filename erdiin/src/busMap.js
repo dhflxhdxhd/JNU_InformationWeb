@@ -5,7 +5,7 @@ import * as bus from './Modules/busInfo'
 import * as facLoc from './Modules/FacilityLocationInfo';
 
 const { kakao } = window;
-let map;
+export let map;
 let facilityFlag=0;
 let busFlag = 0;
 
