@@ -5,7 +5,8 @@ import * as facLoc from './Modules/FacilityLocationInfo';
 
 const { kakao } = window;
 let map;
-let flag=0;
+let facilityFlag=0;
+let busFlag = 0;
 
 const MapContainer = () => {
     
@@ -31,13 +32,13 @@ const MapContainer = () => {
     }, []);
 
     const btnClick = () => {
-        if (flag===0) {
+        if (facilityFlag===0) {
             document.querySelector('.category').style.display = "block";
-            flag = 1;
+            facilityFlag = 1;
         }
-        else if (flag===1) {
+        else if (facilityFlag===1) {
             document.querySelector('.category').style.display = "none";
-            flag=0;
+            facilityFlag=0;
         }
     }
 
@@ -67,7 +68,10 @@ const MapContainer = () => {
                     <button className="categoryBtn" onClick={() => btnClick()}>시설정보</button>
                     <div id="categoryWrapper">
                         <ul className="category">
-                            <li id="store" className="facility_info"><button className="btn conv" onClick={() => facLoc.changeMarker('store', map)}>편의점</button></li>
+                            <li id="store" className="facility_info">
+                                <img className="facilityIcon" src="" alt="편의점아이콘"/>
+                                <button className="btn conv" onClick={() => facLoc.changeMarker('store', map)}>편의점</button>
+                            </li>
                             <li id="atm" className="facility_info"><button className="btn atm" onClick={() => facLoc.changeMarker('atm', map)}>ATM</button></li>
                             <li id="office" className="facility_info"><button className="btn room" onClick={() => facLoc.changeMarker('office', map)}>과사무실</button></li>
                             <li id="rstrt" className="facility_info"><button className="btn cafe" onClick={() => facLoc.changeMarker('rstrt', map)}>식당</button></li>
