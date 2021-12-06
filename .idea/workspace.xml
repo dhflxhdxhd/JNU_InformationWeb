@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cbef8925-edc9-433e-aaa2-1858a19a83ce" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/erdiin/src/Item/facilityPosition.js" beforeDir="false" afterPath="$PROJECT_DIR$/erdiin/src/Item/facilityPosition.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/erdiin/src/Modules/FacilityLocationInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/erdiin/src/Modules/FacilityLocationInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/erdiin/src/busMap.css" beforeDir="false" afterPath="$PROJECT_DIR$/erdiin/src/busMap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erdiin/src/navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/erdiin/src/navbar.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +67,7 @@
       <workItem from="1638424674298" duration="207000" />
       <workItem from="1638689370023" duration="4451000" />
       <workItem from="1638710520774" duration="10295000" />
-      <workItem from="1638752704478" duration="12603000" />
+      <workItem from="1638752704478" duration="16132000" />
     </task>
     <servers />
   </component>
