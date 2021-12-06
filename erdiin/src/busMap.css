@@ -68,8 +68,8 @@
 
 #float {
     position: absolute;
-    top: 10%;
-    left: 80%;
+    top: 5%;
+    left: 85%;
     z-index: 1;
     display: flex;
     justify-content: left;
