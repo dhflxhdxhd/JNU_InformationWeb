@@ -71,13 +71,13 @@ const MapContainer = () => {
                             <li id="store" className="facility_info">
                                 <button className="btn conv" onClick={() => facLoc.changeMarker('store', map)}>
                                     <img className="facilityIcon" src="https://github.com/JNU-erdiin/JNU_InformationWeb/blob/main/img/market.png?raw=true" alt="편의점아이콘"/>
-                                    <p>편의점</p>
+                                    편의점
                                 </button>
                             </li>
                             <li id="atm" className="facility_info">
                                 <button className="btn atm" onClick={() => facLoc.changeMarker('atm', map)}>
                                     <img className="facilityIcon" src="https://github.com/JNU-erdiin/JNU_InformationWeb/blob/main/img/atm.png?raw=true" alt="atm아이콘"/>
-                                    <p>ATM</p>
+                                    ATM
                                 </button>
                             </li>
                             <li id="office" className="facility_info">

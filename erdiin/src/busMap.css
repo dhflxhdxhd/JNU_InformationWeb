@@ -92,6 +92,11 @@
 .categoryBtn {
     margin-bottom: 5px;
 }
+.categoryBtn:hover, .busBtn:hover {
+    background: cornflowerblue;
+    color: white;
+
+}
 .category {
     display: none;
 }
