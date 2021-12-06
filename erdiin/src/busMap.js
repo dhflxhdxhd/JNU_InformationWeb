@@ -65,6 +65,7 @@ const MapContainer = () => {
             <div id='myMap'></div>   
             <div id="float" className="float btn">
                 <div className="facility">
+                    <img src="" alt="어디인로고"/>
                     <button className="categoryBtn" onClick={() => btnClick()}>시설정보</button>
                     <div id="categoryWrapper">
                         <ul className="category">
