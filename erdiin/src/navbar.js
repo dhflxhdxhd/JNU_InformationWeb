@@ -4,6 +4,8 @@ import React,{useState} from 'react';
 import './navbar.css'  
 import * as facPos from "./Item/facilityPosition";
 import * as facLoc from "./Modules/FacilityLocationInfo";
+import * as bus from './Modules/busInfo'
+import * as busPos from "./Item/positions"
 import {map} from "./busMap";
   
 export const Header = () => {
@@ -13,8 +15,6 @@ export const Header = () => {
         classHome : false,
         facHome : false
     });  // 메뉴의 초기값을 false로 설정
-
-
 
     const toggleMenu = (e) => {
         const newisOpen = {...isOpen};
@@ -100,6 +100,22 @@ export const Header = () => {
         listWrapperDiv.innerHTML = str;
     }
 
+
+    const showBus = (b) => {
+        if (b === 'A'){
+            bus.changeMarker('A',map);
+            for (let i = 0; i<busPos.positionA.length; i++){
+
+
+            }
+        }else if(b === 'B'){
+            bus.changeMarker('B',map);
+            for (let i = 0; i<busPos.positionB.length; i++){
+
+            }
+        }
+    }
+
     return(
         <div>
         <div className="navBar-wrapper">
@@ -114,30 +130,24 @@ export const Header = () => {
                 <div className="busnav-header">
                     <p>운행시간표</p>
                     <p>버스노선선택</p>
-                    <button>A</button>
-                    <button>B</button>
+                    <button className="btn" onClick={() => showBus('A')} >A</button>
+                    <button className="btn" onClick={() => showBus('B')} >B</button>
                 </div>
                 <div className="busnav-content">
                     <p>결과</p>
                     <p>도착시간</p>
-                    <div>
-                        <ul>
-                            <li></li>
-                        </ul> 
-                    </div>
+                    <div id="bus-result"></div>
                 </div>
             </div>
         </div>
         <div className={isOpen.classHome ? "navBar-contents show-menu" : "navBar-contents hide-menu"} > 
-            <div>contents &97; 학과정보</div>
                 <div className="search">
                     <input type="text" id="major" placeholder="학과를 입력하세요"/>
                     <button onClick={()=>searchMajor()}>검색</button>
                 </div>
-                <div id="result"> </div>
+                <div id="result"></div>
         </div>
         <div className={isOpen.facHome ? "navBar-contents show-menu" : "navBar-contents hide-menu"} > 
-            <div>contents &97; 시설정보</div>
                 <p>궁금한 편의시설 버튼을 눌러주세요.</p>
                 <div className="wrapper">
                     <ul className="navCategory">
