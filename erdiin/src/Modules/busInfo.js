@@ -31,8 +31,8 @@ const createBusMarkers = () => {
         busMarkers_A.push(marker);
     }
 
-    for (let i = 0; i < positionB.length; i ++) {
-        
+    for (let i = 0; i < positionB.length ; i ++) {
+        console.log("positionB.length : " + positionB.length);
         let latlng = new kakao.maps.LatLng(positionB[i].lat,positionB[i].lng);
 
         let markerImage = new kakao.maps.MarkerImage(imageSrc_B,imageSize);
@@ -55,7 +55,7 @@ export const setBusMarkers_B = (map) => {
 }
 
 function createHtmlContent(title,name,num) {
-    let str = "<div class='busContent'><div class='busstop'>" + title + "</div><div class='limit'>"+ setInterval(callTime(name,num),30000)+"분 뒤에 버스가 도착합니다.</div></div>" ;
+    let str = "<div class='busContent'><div class='busstop'>" + title + "</div><div class='limit'>"+ callTime(name,num)+"분 뒤에 버스가 도착합니다.</div></div>" ;
     return str;
 }
 
@@ -100,6 +100,52 @@ const changeMarker = (type,map) => {
             });
         }
 
+    } else if (type === 'A'){
+        setBusMarkers_A(map);
+        setBusMarkers_B(null);
+        facLoc.setOfficeMarkers(null);
+        facLoc.setStoreMarkers(null);
+        facLoc.setEtcMarkers(null);
+        facLoc.setRstrtMarkers(null);
+        facLoc.setAtmMarkers(null);
+        facLoc.setPrintMarkers(null);
+
+        for (let i=0; i<busMarkers_A.length; i++) {
+            kakao.maps.event.addListener(busMarkers_A[i], 'click', function () {
+
+                let latlng = new kakao.maps.LatLng(positionA[i].lat,positionA[i].lng);
+                let content = createHtmlContent(positionA[i].title,'A',i);
+                var infoWindow = new kakao.maps.InfoWindow({
+                    map: map,
+                    position: latlng,
+                    content: content,
+                    removable: true
+                })
+            });
+        } 
+    }else if(type === "B"){
+        setBusMarkers_A(null);
+        setBusMarkers_B(map);
+        facLoc.setOfficeMarkers(null);
+        facLoc.setStoreMarkers(null);
+        facLoc.setEtcMarkers(null);
+        facLoc.setRstrtMarkers(null);
+        facLoc.setAtmMarkers(null);
+        facLoc.setPrintMarkers(null);
+
+        for (let i=0; i<busMarkers_B.length; i++) {
+            kakao.maps.event.addListener(busMarkers_B[i], 'click', function () {
+
+                let latlng = new kakao.maps.LatLng(positionB[i].lat,positionB[i].lng);
+                let content = createHtmlContent(positionB[i].title,'B',i);
+                var infoWindow = new kakao.maps.InfoWindow({
+                    map: map,
+                    position: latlng,
+                    content: content,
+                    removable: true
+                })
+            });
+        }
     }
 }
 

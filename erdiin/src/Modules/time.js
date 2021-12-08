@@ -1,6 +1,4 @@
-
 import { A1, B1} from '../Item/bustime.js'
-
 
 export const callTime = (name,num) => {
 
@@ -9,12 +7,6 @@ export const callTime = (name,num) => {
     let hours = now.getHours();
     let min = now.getMinutes();
 
-    // let hours = 10;
-    // let min = 10;
-
-    //비교 시간
-    // let busTime = '08:05';
-    
     for (let i=0; i<23; i++){
         if(name === 'A'){
             let busTime = A1[num].time[i];

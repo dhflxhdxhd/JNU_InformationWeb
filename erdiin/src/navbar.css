@@ -40,6 +40,7 @@
     overflow: hidden;
     background-color: white;
     box-shadow: 0 0 7px grey inset, 0 0 7px dimgray;
+    padding-top: 30px;
 }
   
 .show-menu{
@@ -59,6 +60,43 @@ position: absolute;
 z-index: 1;
 left: -246px;
 transition: 1s;
+}
+
+#timetable {
+    font-size: 12px;
+}
+.busnav-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#busbtn button{
+    margin: 20px 10px;
+    width: 50px;
+    height: 25px;
+    border-radius: 2px;
+    border: none;
+    color: #fff;
+}
+.blue{
+    background-color: #8EB6EE;
+}
+
+.red{
+    background-color: #ED8189;
+}
+
+.cnt-header{
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    margin: 0 10px 5px 10px;
+}
+
+.cnt-result{
+    border: 1px solid lightgrey;
 }
 
 .navCategory .btn {
