@@ -31,8 +31,8 @@ const createBusMarkers = () => {
         busMarkers_A.push(marker);
     }
 
-    for (let i = 0; i < positionB.length; i ++) {
-        
+    for (let i = 0; i < positionB.length ; i ++) {
+        console.log("positionB.length : " + positionB.length);
         let latlng = new kakao.maps.LatLng(positionB[i].lat,positionB[i].lng);
 
         let markerImage = new kakao.maps.MarkerImage(imageSrc_B,imageSize);
@@ -55,7 +55,7 @@ export const setBusMarkers_B = (map) => {
 }
 
 function createHtmlContent(title,name,num) {
-    let str = "<div class='busContent'><div class='busstop'>" + title + "</div><div class='limit'>"+ setInterval(callTime(name,num),30000)+"분 뒤에 버스가 도착합니다.</div></div>" ;
+    let str = "<div class='busContent'><div class='busstop'>" + title + "</div><div class='limit'>"+ callTime(name,num)+"분 뒤에 버스가 도착합니다.</div></div>" ;
     return str;
 }
 

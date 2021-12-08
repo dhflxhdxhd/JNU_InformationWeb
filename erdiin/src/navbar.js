@@ -6,6 +6,7 @@ import * as facPos from "./Item/facilityPosition";
 import * as facLoc from "./Modules/FacilityLocationInfo";
 import * as bus from './Modules/busInfo'
 import * as busPos from "./Item/positions"
+import { callTime } from './Modules/time';
 import {map} from "./busMap";
   
 export const Header = () => {
@@ -100,20 +101,27 @@ export const Header = () => {
         listWrapperDiv.innerHTML = str;
     }
 
+    function createBusContent(title,name,num) {
+        let str = "<li><p id = 'busli' style = 'border-bottom : 1px solid lightgrey'>" + title + "</p></li>"
+        return str;
+    }
 
     const showBus = (b) => {
+        let str = "";
         if (b === 'A'){
             bus.changeMarker('A',map);
             for (let i = 0; i<busPos.positionA.length; i++){
-
-
+                str = str + createBusContent(busPos.positionA[i].title,'A',i);
             }
         }else if(b === 'B'){
             bus.changeMarker('B',map);
+            
             for (let i = 0; i<busPos.positionB.length; i++){
-
+                str = str + createBusContent(busPos.positionB[i].title,'B',i);
             }
-        }
+        }   
+        const busnavContent = document.getElementById('busul');
+        busnavContent.innerHTML = str;
     }
 
     return(
@@ -126,17 +134,22 @@ export const Header = () => {
             </ul>
         </div>    
         <div className={isOpen.busHome ? "navBar-contents show-menu" : "navBar-contents hide-menu"} > 
-            <div>
+            <div className="busnavbar">
                 <div className="busnav-header">
-                    <p>운행시간표</p>
-                    <p>버스노선선택</p>
-                    <button className="btn" onClick={() => showBus('A')} >A</button>
-                    <button className="btn" onClick={() => showBus('B')} >B</button>
+                    <p>버스를 선택해주세요.</p>
+                    <div id="busbtn">
+                        <button className="blue" onClick={() => showBus('A')} >A</button>
+                        <button className="red" onClick={() => showBus('B')} >B</button>
+                    </div>
                 </div>
                 <div className="busnav-content">
-                    <p>결과</p>
-                    <p>도착시간</p>
-                    <div id="bus-result"></div>
+                    <div className="cnt-header">
+                        <p>운행노선</p>
+                        <p id="timetable" onClick={()=>alert("팝업창을 띄우려했지만 귀찮아서.... 일단 함정이에요...")}>운행시간표</p>
+                    </div>
+                    <div className="cnt-result">
+                        <ul id="busul" className="busul"></ul>
+                    </div>
                 </div>
             </div>
         </div>
